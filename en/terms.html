@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — AdIA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA3FF',
+            backgroundDark: '#0B141A',
+            backgroundCard: '#121E27',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <script src="assets/includes.js" defer></script>
+</head>
+<body class="bg-backgroundDark text-slate-200 font-sans antialiased">
+<div id="siteHeader"></div>
+
+<div class="h-24"></div>
+
+<main class="mx-auto max-w-5xl px-6 pt-16 pb-24">
+  <div class="text-center mb-24">
+    <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-primary uppercase bg-primary/10 rounded-full">Legal Framework</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">Terms of Service</h1>
+    <p class="max-w-2xl mx-auto text-slate-400 text-lg">Please read these terms carefully before engaging with our creative services or using our platform.</p>
+    
+    <div class="mt-8 flex justify-center items-center gap-6 text-[10px] font-mono uppercase tracking-widest text-slate-500">
+      <div class="flex items-center gap-2 border border-slate-800 px-3 py-1 rounded-md">
+        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+        <span>Version 1.1</span>
+      </div>
+      <div class="flex items-center gap-2 border border-slate-800 px-3 py-1 rounded-md">
+        <span>Updated: <span id="docLastUpdated" class="text-slate-300"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">deployed_code</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">deployed_code</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Scope of Services</h3>
+      <p class="text-slate-400 leading-relaxed">AdIA provides creative execution services combining AI-assisted generation with human expertise. Specific deliverables and timelines are defined per engagement.</p>
+    </div>
+
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden text-slate-200">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">copyright</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">copyright</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Intellectual Property</h3>
+      <p class="text-slate-400 leading-relaxed">All website content is the property of AdIA. Client deliverables and IP ownership are defined contractually on a per-project basis.</p>
+    </div>
+
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">gavel</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">gavel</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Limitation of Liability</h3>
+      <p class="text-slate-400 leading-relaxed">AdIA shall not be liable for indirect, incidental, or consequential damages. Content is provided “as is” without guarantees.</p>
+    </div>
+
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">public</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">public</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Governing Law</h3>
+      <p class="text-slate-400 leading-relaxed">These terms are governed by the laws of the applicable jurisdiction for your specific engagement with AdIA.</p>
+    </div>
+  </div>
+
+  <div class="bg-backgroundCard/60 rounded-2xl p-10 md:p-12 border border-slate-800/80 text-center">
+    <h4 class="text-2xl font-bold text-white mb-3">Legal Inquiries</h4>
+    <p class="text-slate-400 mb-8 max-w-xl mx-auto leading-relaxed">For formal questions regarding these Terms or to request a Master Services Agreement (MSA), please contact our legal team.</p>
+    <a href="mailto:orugga@orugga.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-90 transition">
+      Contact us <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+
+<script>
+  (function() {
+    const el = document.getElementById('docLastUpdated');
+    if (el) {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,'0');
+      const day = String(d.getDate()).padStart(2,'0');
+      el.textContent = `${y}-${m}-${day}`;
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Get started — AdIA</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA3FF',
+            backgroundDark: '#0B141A',
+            backgroundCard: '#121E27',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+  /* --- Pixel-perfect form control sizing (inputs & select identical width) --- */
+  #ctaForm .grid{ justify-items:stretch; }
+  #ctaForm .grid > div{ width:100%; justify-self:stretch; }
+
+  #ctaForm input,
+  #ctaForm select,
+  #ctaForm textarea{
+    height:46px;
+    display:block;
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+
+    border-radius:12px;
+    background:#ffffff;
+    border:1px solid rgba(255,255,255,0.12);
+
+    padding:12px 16px;
+    color:#0f172a;
+
+    outline:none;
+  }
+
+  /* keep textarea height natural */
+  #ctaForm textarea{ height:auto; }
+
+  /* Select: remove native chrome + add arrow without shrinking the box */
+  #ctaForm select{
+    height:46px;
+    line-height:1.25;
+    padding-right:44px;
+
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7l5 6 5-6' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    background-size:12px;
+  }
+
+  /* Focus ring consistent with site */
+  #ctaForm input:focus,
+  #ctaForm select:focus,
+  #ctaForm textarea:focus{
+    box-shadow:0 0 0 3px rgba(96,165,250,0.35);
+    border-color:rgba(96,165,250,0.6);
+  }
+</style>
+<script defer="" src="assets/includes.js"></script>
+</head>
+<body class="bg-backgroundDark text-slate-200 font-sans antialiased">
+<div id="siteHeader"></div>
+<!-- Spacer for fixed header -->
+<div class="h-24"></div>
+
+<!-- ================= MAIN ================= -->
+<main class="relative mx-auto max-w-3xl px-6 py-24">
+<!-- Title -->
+<div class="text-center mb-14">
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+        Get started
+      </h1>
+<p class="mt-4 text-slate-400">
+        Tell us about your needs and see how AdIA can transform your creative execution.
+      </p>
+</div>
+<!-- Form Card -->
+<div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+<form action="#" class="space-y-6" id="ctaForm" method="post">
+<div class="grid grid-cols-1 md:grid-cols-2 items-start gap-4 md:gap-5">
+<div>
+<label class="block text-sm font-medium mb-1">Full name *</label>
+<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="full_name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Work email *</label>
+<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="work_email" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Company *</label>
+<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="company" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Phone number <span class="opacity-70">(optional)</span></label>
+<input autocomplete="tel" class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" id="phoneInput" inputmode="tel" name="phone" type="tel"/>
+<div class="mt-2 text-xs text-slate-400" id="phoneHint"></div>
+<input id="phoneE164" name="phone_e164" type="hidden"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Role / Job title *</label>
+<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="role" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Estimated monthly creative volume</label>
+<select class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="estimated_volume">
+<option>Less than 50 assets</option>
+<option>50–200 assets</option>
+<option>200–1,000 assets</option>
+<option>1,000+ assets</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-medium mb-1">What are you looking to produce with AdIA? *</label>
+<textarea class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="what_to_produce" required="" rows="4"></textarea>
+</div>
+</div>
+<button class="w-full inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-base hover:bg-primary/90 transition text-backgroundDark font-bold" id="ctaSubmit" type="submit"><span class="ctaBtnLabel">Get started</span><span class="ctaSpinner hidden ml-2 inline-flex items-center"><span class="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></span></span></button>
+<div class="hidden mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200" id="formMessage"></div>
+</form></div>
+
+
+</main>
+<!-- ================= FOOTER (COMMON) ================= -->
+<script>
+(function() {
+  const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzUP7HaKnM4dNC8g5xCwnRrDT22RKW_TlS94-ITQwkSbf-sGXhheD53uCHKWnIryor3/exec';
+
+  function showMessage(kind, text) {
+    const el = document.getElementById('formMessage');
+    if (!el) return;
+    el.classList.remove('hidden');
+    el.textContent = text;
+
+    el.classList.remove('border-primary','text-slate-100','border-red-400','text-red-100');
+    if (kind === 'success') {
+      el.classList.add('border-primary','text-slate-100');
+    } else {
+      el.classList.add('border-red-400','text-red-100');
+    }
+    el.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('ctaForm');
+    if (!form) return;
+
+    const btn = document.getElementById('ctaSubmit');
+    const label = btn ? btn.querySelector('.ctaBtnLabel') : null;
+    const spinner = btn ? btn.querySelector('.ctaSpinner') : null;
+
+
+    // Phone: intl-tel-input (country selector + formatting) — free country guess via browser language
+    const phoneInput = document.getElementById('phoneInput');
+    const phoneE164 = document.getElementById('phoneE164');
+    const phoneHint = document.getElementById('phoneHint');
+
+    function guessCountry() {
+      const lang = (navigator.language || 'en-US').toUpperCase();
+      const cc = (lang.split('-')[1] || 'US').replace(/[^A-Z]/g,'');
+      return cc || 'US';
+    }
+
+    let iti = null;
+    if (phoneInput && window.intlTelInput) {
+      iti = window.intlTelInput(phoneInput, {
+        initialCountry: guessCountry(),
+        autoPlaceholder: 'polite',
+        separateDialCode: true,
+        nationalMode: false
+      });
+
+      const syncPhone = () => {
+        const raw = (phoneInput.value || '').trim();
+        const e164 = raw ? iti.getNumber() : '';
+        if (phoneE164) phoneE164.value = e164 || '';
+        if (phoneHint) {
+          const ex = iti.getNumberPlaceholder() || '';
+          phoneHint.textContent = ex ? `Format: ${ex}` : '';
+        }
+      };
+
+      phoneInput.addEventListener('input', syncPhone);
+      phoneInput.addEventListener('countrychange', syncPhone);
+      syncPhone();
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot
+      const hp = form.querySelector('input[name="website"]');
+      if (hp && hp.value.trim() !== '') {
+        showMessage('success', 'Thanks! We received your request.');
+        form.reset();
+        return;
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.classList.add('opacity-80');
+      }
+      if (label) label.textContent = 'Sending…';
+      if (spinner) spinner.classList.remove('hidden');
+
+      try {
+        const fd = new FormData(form);
+        const body = new URLSearchParams();
+        for (const [k, v] of fd.entries()) {
+          if (k === 'website') continue;
+          body.append(k, v);
+        }
+        body.append('page', location.pathname.split('/').pop() || 'request-demo.html');
+        body.append('ts', String(Date.now()));
+
+        await fetch(ENDPOINT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: body.toString()
+        });
+
+        showMessage('success', 'Sent! We’ll get back to you soon.');
+        form.reset();
+      } catch (err) {
+        showMessage('error', 'Something went wrong. Please try again.');
+      } finally {
+        if (spinner) spinner.classList.add('hidden');
+        if (label) label.textContent = 'Get started';
+        if (btn) {
+          btn.disabled = false;
+          btn.classList.remove('opacity-80');
+        }
+      }
+    });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.1.4/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.1.4/build/js/utils.js"></script>
+<div id="siteFooter"></div>
+</body>
+</html>

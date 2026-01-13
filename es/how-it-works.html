@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo funciona — AdIA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA3FF',
+            backgroundDark: '#0B141A',
+            backgroundCard: '#121E27',
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <!-- Shared includes (injects header/footer) -->
+  <script src="assets/includes.js" defer></script>
+</head>
+
+<body class="bg-backgroundDark text-slate-200 font-sans antialiased">
+
+<div id="siteHeader"></div>
+<div class="h-24"></div>
+
+<main class="flex-grow flex flex-col items-center py-20 px-6">
+  <div class="max-w-4xl w-full text-center mb-20">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+      Precisión <span class="text-primary italic">a escala.</span>
+    </h1>
+    <p class="text-lg md:text-xl text-slate-400 leading-relaxed">
+      Un flujo de alto rendimiento que combina eficiencia de IA con estándares profesionales de producción.
+    </p>
+  </div>
+
+  <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <!-- 01 -->
+    <div class="p-8 rounded-3xl bg-backgroundCard border border-white/5 flex flex-col h-full relative overflow-hidden group">
+      <div class="absolute top-4 right-6 text-white/10 font-black text-4xl group-hover:text-primary/20 transition-colors">01</div>
+      <span class="material-symbols-outlined text-primary mb-6 text-3xl">description</span>
+      
+      <h3 class="text-xl font-bold text-white mb-4">Brief + Kick-off</h3>
+      <p class="text-sm text-slate-400 mb-8 flex-grow">
+        Alineamos objetivos, restricciones de marca, canales, tiempos y aprobaciones.
+      </p>
+
+      <ul class="space-y-3 mb-8 text-xs border-t border-white/10 pt-6">
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span><strong>Inputs:</strong> Brief, guías de marca, referencias</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span><strong>Output:</strong> Alcance definido y plan de producción</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 02 -->
+    <div class="p-8 rounded-3xl bg-backgroundCard border border-white/5 flex flex-col h-full relative overflow-hidden group">
+      <div class="absolute top-4 right-6 text-white/10 font-black text-4xl group-hover:text-primary/20 transition-colors">02</div>
+      <span class="material-symbols-outlined text-primary mb-6 text-3xl">psychology</span>
+      
+      <h3 class="text-xl font-bold text-white mb-4">Creatividad con IA + Equipo creativo</h3>
+      <p class="text-sm text-slate-400 mb-8 flex-grow">
+        Desarrollamos 2–3 conceptos iniciales usando generación asistida por IA, revisados y refinados por creativos con experiencia.
+      </p>
+
+      <ul class="space-y-3 mb-6 text-xs border-t border-white/10 pt-6">
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Opciones de concepto con una dirección recomendada</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Revisión humana de alineación con la marca y viabilidad</span>
+        </li>
+      </ul>
+
+      <div class="mt-auto pt-4 flex flex-wrap gap-2">
+        <div class="px-3 py-1 rounded border border-primary/30 bg-primary/10 text-[10px] font-bold text-primary flex items-center gap-1 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">bolt</span> POWERED BY ORUGGA
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="p-8 rounded-3xl bg-backgroundCard border border-white/5 flex flex-col h-full relative overflow-hidden group">
+      <div class="absolute top-4 right-6 text-white/10 font-black text-4xl group-hover:text-primary/20 transition-colors">03</div>
+      <span class="material-symbols-outlined text-primary mb-6 text-3xl">movie_filter</span>
+      
+      <h3 class="text-xl font-bold text-white mb-4">Storyboard + Producción</h3>
+      <p class="text-sm text-slate-400 mb-8 flex-grow">
+        Ejecución ágil con ciclos de feedback controlados para alcanzar estándares profesionales.
+      </p>
+
+      <ul class="space-y-3 mb-6 text-xs border-t border-white/10 pt-6">
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Storyboard (cuando aplica)</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Hitos de revisión definidos</span>
+        </li>
+      </ul>
+
+      <div class="mt-auto pt-4 flex flex-wrap gap-2">
+        <div class="px-3 py-1 rounded border border-white/10 bg-white/5 text-[10px] font-bold text-slate-300 flex items-center gap-1 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs text-primary">verified</span> PRODUCED BY FRAME
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="p-8 rounded-3xl bg-backgroundCard border border-white/5 flex flex-col h-full relative overflow-hidden group">
+      <div class="absolute top-4 right-6 text-white/10 font-black text-4xl group-hover:text-primary/20 transition-colors">04</div>
+      <span class="material-symbols-outlined text-primary mb-6 text-3xl">rocket_launch</span>
+      
+      <h3 class="text-xl font-bold text-white mb-4">Entrega final multiplataforma</h3>
+      <p class="text-sm text-slate-400 mb-8 flex-grow">
+        Piezas listas para activación, formateadas y validadas para activación en todos los canales necesarios.
+      </p>
+
+      <ul class="space-y-3 mb-8 text-xs border-t border-white/10 pt-6">
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Video, motion, estáticos y adaptaciones</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Entrega organizada</span>
+        </li>
+      </ul>
+      
+      <p class="text-[10px] text-primary/80 font-medium italic mt-auto">
+        Entregado a un costo significativamente menor que la producción tradicional.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Advantage block -->
+  <div class="mt-24 max-w-5xl w-full p-12 rounded-[2.5rem] bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">La ventaja AdIA: mejor, más rápido, más inteligente.</h2>
+    <p class="text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+      Una alianza estratégica diseñada para entregar producción creativa premium con eficiencia impulsada por IA, <strong>reduciendo significativamente los costos operativos tradicionales</strong> y manteniendo estándares de clase mundial.
+    </p>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+      <!-- Orugga -->
+      <div class="flex flex-col items-center">
+        <div class="text-sm md:text-base font-semibold text-slate-200 mb-3">
+          Infraestructura tecnológica
+        </div>
+        <div class="px-4 py-2 rounded-lg border border-white/10 bg-white/5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">bolt</span>
+          <span class="text-sm font-bold text-slate-100 tracking-tight">POWERED BY ORUGGA</span>
+        </div>
+      </div>
+
+      <!-- Frame -->
+      <div class="flex flex-col items-center">
+        <div class="text-sm md:text-base font-semibold text-slate-200 mb-3">
+          Excelencia en producción
+        </div>
+        <div class="px-4 py-2 rounded-lg border border-white/10 bg-white/5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">verified</span>
+          <span class="text-sm font-bold text-slate-100 tracking-tight uppercase">PRODUCED BY FRAME</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+</body>
+</html>

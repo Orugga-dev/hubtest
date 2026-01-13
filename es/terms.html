@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos del Servicio — AdIA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA3FF',
+            backgroundDark: '#0B141A',
+            backgroundCard: '#121E27',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <script src="assets/includes.js" defer></script>
+</head>
+<body class="bg-backgroundDark text-slate-200 font-sans antialiased">
+<div id="siteHeader"></div>
+
+<div class="h-24"></div>
+
+<main class="mx-auto max-w-5xl px-6 pt-16 pb-24">
+  <div class="text-center mb-24">
+    <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-primary uppercase bg-primary/10 rounded-full">Marco legal</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">Términos del Servicio</h1>
+    <p class="max-w-2xl mx-auto text-slate-400 text-lg">Por favor, lee estos términos cuidadosamente antes de contratar nuestros servicios creativos o usar nuestra plataforma.</p>
+    
+    <div class="mt-8 flex justify-center items-center gap-6 text-[10px] font-mono uppercase tracking-widest text-slate-500">
+      <div class="flex items-center gap-2 border border-slate-800 px-3 py-1 rounded-md">
+        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+        <span>Version 1.1</span>
+      </div>
+      <div class="flex items-center gap-2 border border-slate-800 px-3 py-1 rounded-md">
+        <span>Actualizado: <span id="docLastUpdated" class="text-slate-300"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">deployed_code</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">deployed_code</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Alcance de los servicios</h3>
+      <p class="text-slate-400 leading-relaxed">AdIA brinda servicios de ejecución creativa que combinan generación asistida por IA con expertise humano. Los entregables y plazos se definen para cada proyecto.</p>
+    </div>
+
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden text-slate-200">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">copyright</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">copyright</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Propiedad intelectual</h3>
+      <p class="text-slate-400 leading-relaxed">Todo el contenido del sitio es propiedad de AdIA. Los entregables del cliente y la titularidad de PI se definen contractualmente por proyecto.</p>
+    </div>
+
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">gavel</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">gavel</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Limitación de responsabilidad</h3>
+      <p class="text-slate-400 leading-relaxed">AdIA no será responsable por daños indirectos, incidentales o consecuentes. El contenido se proporciona “tal cual” y sin garantías.</p>
+    </div>
+
+    <div class="group p-12 rounded-2xl bg-backgroundCard border border-slate-800 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-9xl" aria-hidden="true">public</span>
+      </div>
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-primary text-3xl font-light" aria-hidden="true">public</span>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-4">Ley aplicable</h3>
+      <p class="text-slate-400 leading-relaxed">Estos términos se rigen por las leyes de la jurisdicción aplicable a tu contratación específica con AdIA.</p>
+    </div>
+  </div>
+
+  <div class="bg-backgroundCard/60 rounded-2xl p-10 md:p-12 border border-slate-800/80 text-center">
+    <h4 class="text-2xl font-bold text-white mb-3">Consultas legales</h4>
+    <p class="text-slate-400 mb-8 max-w-xl mx-auto leading-relaxed">Para consultas formales sobre estos Términos o para solicitar un Master Services Agreement (MSA), contacta a nuestro equipo legal.</p>
+    <a href="mailto:orugga@orugga.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-90 transition">
+      Contáctanos <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+
+<script>
+  (function() {
+    const el = document.getElementById('docLastUpdated');
+    if (el) {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,'0');
+      const day = String(d.getDate()).padStart(2,'0');
+      el.textContent = `${y}-${m}-${day}`;
+    }
+  })();
+</script>
+</body>
+</html>

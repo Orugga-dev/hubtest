@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AdIA - Casos</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA3FF',
+            backgroundDark: '#0B141A',
+            backgroundCard: '#121E27',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+    /* Prevent background scroll when modal open */
+    body.modal-open { overflow: hidden; }
+  </style>
+</head>
+<body class="bg-backgroundDark text-slate-200 font-sans antialiased">
+<div id="siteHeader"></div>
+<div class="h-24"></div>
+<main class="flex-grow flex flex-col">
+<div class="w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-20 mx-auto max-w-7xl">
+<!-- Centered header -->
+<div class="mb-12 md:mb-16 max-w-3xl mx-auto text-center">
+  <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] bg-primary/10 px-4 py-1 rounded-full inline-block mb-6">
+    Portafolio
+  </span>
+
+  <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl mb-6">
+    Casos
+  </h1>
+  
+  <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+    Del prompt a producción. A continuación verás piezas reales generadas usando <span class="text-white font-semibold">AdIA workflows</span>,
+    que muestran la precisión de nuestros modelos generativos.
+  </p>
+  
+  <p class="mt-4 text-sm text-slate-500 font-medium italic">
+    Toca cualquier video para verlo en grande con sonido.
+  </p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+<!-- REAL VIDEO -->
+<article class="js-videoCard group relative flex flex-col gap-4 rounded-xl bg-white/5 p-4 shadow-sm border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer" data-video-src="hero-reel.mp4" data-video-title="AdIA Campaign Reel">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
+<div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">play_circle</span>
+</div>
+<video autoplay="" class="h-full w-full object-cover opacity-95" loop="" muted="" playsinline="">
+<source src="hero-reel.mp4" type="video/mp4"/>
+</video>
+<div class="absolute top-3 right-3 z-20">
+<span class="inline-flex items-center rounded-md bg-black/60 px-2 py-1 text-xs font-medium text-white backdrop-blur-md ring-1 ring-inset ring-white/10">
+                Salida real de AdIA
+              </span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">AdIA Campaign Reel</h3>
+<p class="text-sm text-slate-400">Real video output generated and finalized through AdIA production workflows.</p>
+</div>
+</article>
+<!-- EXISTING DEMO 1 -->
+<article class="js-videoCard group relative flex flex-col gap-4 rounded-xl bg-white/5 p-4 shadow-sm border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer" data-video-src="https://videos.pexels.com/video-files/4114797/4114797-uhd_2560_1440_25fps.mp4" data-video-title="Beverage Commercial">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
+<div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">play_circle</span>
+</div>
+<video autoplay="" class="h-full w-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" loop="" muted="" playsinline="" poster="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&amp;w=1000&amp;auto=format&amp;fit=crop">
+<source src="https://videos.pexels.com/video-files/4114797/4114797-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+<div class="absolute top-3 right-3 z-20">
+<span class="inline-flex items-center rounded-md bg-black/60 px-2 py-1 text-xs font-medium text-white backdrop-blur-md ring-1 ring-inset ring-white/10">Simulación</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Beverage Commercial</h3>
+<p class="text-sm text-slate-400">Style transfer and fluid simulation. Physics-accurate liquid dynamics.</p>
+</div>
+</article>
+<!-- EXISTING DEMO 2 -->
+<article class="js-videoCard group relative flex flex-col gap-4 rounded-xl bg-white/5 p-4 shadow-sm border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer" data-video-src="https://videos.pexels.com/video-files/6561173/6561173-uhd_2560_1440_25fps.mp4" data-video-title="Fashion Editorial">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
+<div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">play_circle</span>
+</div>
+<video autoplay="" class="h-full w-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" loop="" muted="" playsinline="" poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&amp;w=1000&amp;auto=format&amp;fit=crop">
+<source src="https://videos.pexels.com/video-files/6561173/6561173-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+<div class="absolute top-3 right-3 z-20">
+<span class="inline-flex items-center rounded-md bg-black/60 px-2 py-1 text-xs font-medium text-white backdrop-blur-md ring-1 ring-inset ring-white/10">Humano virtual</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Fashion Editorial</h3>
+<p class="text-sm text-slate-400">Virtual model generation and lighting control. Consistency across multiple poses.</p>
+</div>
+</article>
+<!-- EXISTING DEMO 3 -->
+<article class="js-videoCard group relative flex flex-col gap-4 rounded-xl bg-white/5 p-4 shadow-sm border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer" data-video-src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4" data-video-title="Tech Explainer">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
+<div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">play_circle</span>
+</div>
+<video autoplay="" class="h-full w-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" loop="" muted="" playsinline="" poster="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&amp;w=1000&amp;auto=format&amp;fit=crop">
+<source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+<div class="absolute top-3 right-3 z-20">
+<span class="inline-flex items-center rounded-md bg-black/60 px-2 py-1 text-xs font-medium text-white backdrop-blur-md ring-1 ring-inset ring-white/10">Motion GFX</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Tech Explainer</h3>
+<p class="text-sm text-slate-400">Abstract 3D motion graphics loop. Perfect for SAAS landing pages.</p>
+</div>
+</article>
+</div>
+<div class="mt-8 flex justify-center">
+<a class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-base font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(19,164,236,0.4)] hover:shadow-[0_0_30px_rgba(19,164,236,0.6)] text-backgroundDark" href="request-demo.html">
+          Hablemos
+          <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/includes.js"></script>
+<!-- ======= Video Modal ======= -->
+<div class="fixed inset-0 z-[80] hidden" id="videoModal">
+<div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+<div class="relative mx-auto flex h-full w-full items-center justify-center p-4">
+<div class="relative w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-[#0B141A] shadow-2xl">
+<div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+<div class="truncate text-sm font-semibold text-slate-100" id="modalTitle">Video</div>
+</div>
+<button aria-label="Close" class="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-slate-100 hover:bg-white/10 transition" id="closeModalBtn">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="bg-black">
+<video class="w-full h-auto" controls="" id="modalVideo" playsinline=""></video>
+</div>
+<div class="px-4 py-3 text-xs text-slate-400 border-t border-white/10">
+          En esta vista el audio está habilitado.
+        </div>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const modalTitle = document.getElementById('modalTitle');
+      const closeBtn = document.getElementById('closeModalBtn');
+
+      if (!modal || !modalVideo) return;
+
+      function openModal(src, title) {
+        // Reset
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        modalVideo.load();
+
+        modalTitle.textContent = title || 'Video';
+        modal.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+
+        // Set source and play with sound (user gesture triggers this)
+        modalVideo.src = src;
+        modalVideo.muted = false;
+        modalVideo.volume = 1;
+        modalVideo.currentTime = 0;
+
+        // Some browsers need a tick after setting src
+        setTimeout(() => {
+          const p = modalVideo.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {});
+        }, 50);
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        modalVideo.load();
+      }
+
+      // Click cards to open
+      document.querySelectorAll('.js-videoCard').forEach(card => {
+        card.addEventListener('click', (e) => {
+          const src = card.getAttribute('data-video-src');
+          const title = card.getAttribute('data-video-title') || 'Video';
+          if (!src) return;
+          openModal(src, title);
+        });
+        // Make it accessible via keyboard
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Abrir video');
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const src = card.getAttribute('data-video-src');
+            const title = card.getAttribute('data-video-title') || 'Video';
+            if (!src) return;
+            openModal(src, title);
+          }
+        });
+      });
+
+      // Close handlers
+      closeBtn && closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      // backdrop click (first child is backdrop)
+      modal.addEventListener('mousedown', (e) => {
+        const backdrop = modal.firstElementChild;
+        if (e.target === backdrop) closeModal();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+    })();
+  </script>
+</body>
+</html>

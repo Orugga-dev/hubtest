@@ -95,6 +95,36 @@
     });
   }
 
+
+  function initHeaderShrink() {
+    const header = document.getElementById("siteHeaderBar");
+    const inner = document.getElementById("headerInner");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (!header || !inner) return;
+
+    const THRESHOLD = 12;
+
+    function setMobileTop() {
+      if (!mobileMenu) return;
+      const h = header.getBoundingClientRect().height;
+      mobileMenu.style.top = `${Math.round(h)}px`;
+    }
+
+    function onScroll() {
+      const scrolled = window.scrollY > THRESHOLD;
+      header.classList.toggle("is-scrolled", scrolled);
+      setMobileTop();
+    }
+
+    // run once now
+    onScroll();
+    setMobileTop();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", setMobileTop);
+    window.addEventListener("pageshow", () => { onScroll(); setMobileTop(); });
+  }
+
   async function inject() {
     const headerHost = document.getElementById("siteHeader");
     const footerHost = document.getElementById("siteFooter");
@@ -121,6 +151,7 @@
     initMobileMenu();
     setFooterYear();
     initLangSwitcher();
+    initHeaderShrink();
   }
 
   window.addEventListener("DOMContentLoaded", inject);

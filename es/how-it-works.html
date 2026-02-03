@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cómo funciona — AdIA</title>
+  <title>How it Works — AdIA</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -33,12 +33,19 @@
 <body class="bg-backgroundDark text-slate-200 font-sans antialiased">
 
 <div id="siteHeader"></div>
-<div class="h-24"></div>
 
-<main class="flex-grow flex flex-col items-center py-20 px-6">
+<main class="relative flex min-h-screen w-full flex-col items-center justify-start pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+
   <div class="max-w-4xl w-full text-center mb-20">
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
-      Precisión <span class="text-primary italic">a escala.</span>
+
+    <!-- Eyebrow (NEW) -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+      Como funciona
+    </div>
+
+    <!-- Title (unified typography; keeps white + primary + italic) -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
+      Precisión <span class="text-primary italic">a escala</span>
     </h1>
     <p class="text-lg md:text-xl text-slate-400 leading-relaxed">
       Un flujo de alto rendimiento que combina eficiencia de IA con estándares profesionales de producción.

@@ -92,6 +92,17 @@
       pointer-events:none;
     }
     .hero-focus h1, .hero-focus p{ text-shadow:0 2px 18px rgba(0,0,0,.25); }
+/* === Fix dropdown select contrast (dark UI) === */
+select {
+  color-scheme: dark;
+}
+
+/* Refuerzo visual (opcional pero recomendado) */
+select option {
+  background-color: #0B141A;
+  color: #FFFFFF;
+}
+   
   </style>
 <!-- Shared includes (injects header/footer) -->
 <script defer="" src="assets/includes.js"></script>
@@ -341,130 +352,130 @@
   </section>
 
   <!-- OFFER -->
-  <section id="packboost" class="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-      <!-- Left: pack + form -->
-      <div class="lg:col-span-5 lg:sticky lg:top-24">
-        <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">MODELO DE EJECUCIÓN</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Pack Boost</h2>
-        <p class="mt-5 text-white/75 leading-relaxed">
-          Para equipos que necesitan velocidad sin resignar control ni calidad.
-        </p>
+<section id="packboost" class="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
 
-        <div class="mt-8 rounded-3xl border border-white/10 bg-backgroundCard/60 p-6 md:p-7">
-          <!-- Pack summary row -->
-          <div class="flex items-start justify-between gap-6">
-            <div>
-              <p class="text-xs tracking-[0.25em] uppercase text-white/55">Pack</p>
-              <p class="mt-2 text-2xl font-semibold text-white">Boost</p>
-              <p class="mt-3 text-sm text-white/70 leading-relaxed">
-                Producción audiovisual lista para publicar, en un sprint corto.
-              </p>
-            </div>
-            <div class="text-right">
-              <div class="text-sm text-white/70">
-                <div class="flex items-center justify-end gap-3">
-                  <span class="opacity-75">Entrega</span>
-                  <span class="font-semibold text-white">~2 semanas</span>
-                </div>
-                <div class="mt-1 flex items-center justify-end gap-3">
-                  <span class="opacity-75">Inversión</span>
-                  <span class="font-semibold text-white">Desde USD 5.000</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- Left: Pack Boost + Form -->
+    <div class="lg:col-span-5">
+      <div class="h-full rounded-3xl border border-white/10 bg-backgroundCard/60 p-6 md:p-7 flex flex-col">
 
-          <div class="mt-6 border-t border-white/10 pt-6">
-            <form id="leadDetectForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <!-- Q1: Tamaño -->
-              <div>
-                <label class="block text-sm font-medium text-white/85 mb-1">Tamaño de la empresa *</label>
-                <select name="company_size" required
-                  class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
-                  <option value="" disabled selected>Seleccionar…</option>
-                  <option value="1-5">1–5</option>
-                  <option value="6-20">6–20</option>
-                  <option value="21-80">21–80</option>
-                  <option value="81-300">81–300</option>
-                  <option value="300+">+300</option>
-                </select>
-              </div>
+        <!-- Header (único Pack Boost) -->
+        <div class="mb-6">
+          <p class="text-xs tracking-[0.25em] uppercase text-white/55">
+            MODELO DE EJECUCIÓN
+          </p>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+            Pack Boost
+          </h2>
+          <p class="mt-3 text-white/75 leading-relaxed">
+            Para equipos que necesitan velocidad sin resignar control ni calidad. Producción audiovisual lista para publicar, en un sprint corto.
+          </p>
 
-              <!-- Q2: Uso -->
-              <div>
-                <label class="block text-sm font-medium text-white/85 mb-1">¿Para qué lo necesitás hoy? *</label>
-                <select name="use_case" required
-                  class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
-                  <option value="" disabled selected>Seleccionar…</option>
-                  <option value="paid">Paid ads / performance</option>
-                  <option value="launch">Lanzamiento / campaña</option>
-                  <option value="organic">Redes orgánicas</option>
-                  <option value="unclear">Todavía no lo tengo claro</option>
-                </select>
-              </div>
-
-              <!-- Q3: Producción actual -->
-              <div>
-                <label class="block text-sm font-medium text-white/85 mb-1">¿Cómo producen hoy? *</label>
-                <select name="current_production" required
-                  class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
-                  <option value="" disabled selected>Seleccionar…</option>
-                  <option value="inhouse">Equipo interno</option>
-                  <option value="freelance">Freelancers / proveedores</option>
-                  <option value="agency">Agencia</option>
-                  <option value="none">No producimos de forma regular</option>
-                </select>
-              </div>
-
-              <!-- Q4: Urgencia -->
-              <div>
-                <label class="block text-sm font-medium text-white/85 mb-1">¿Para cuándo lo necesitás? *</label>
-                <select name="urgency" required
-                  class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
-                  <option value="" disabled selected>Seleccionar…</option>
-                  <option value="2-3w">En 2–3 semanas</option>
-                  <option value="1-2m">En 1–2 meses</option>
-                  <option value="exploring">Solo estoy explorando</option>
-                </select>
-              </div>
-
-              <!-- Q5: Presupuesto -->
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-white/85 mb-1">¿Tenés presupuesto asignado? *</label>
-                <select name="budget" required
-                  class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
-                  <option value="" disabled selected>Seleccionar…</option>
-                  <option value="5k+">Sí, USD 5.000 o más</option>
-                  <option value="<5k">Sí, pero menor</option>
-                  <option value="no">Todavía no</option>
-                </select>
-              </div>
-
-              <!-- Message -->
-              <div id="leadDetectMsg"
-                class="md:col-span-2 hidden rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-white/80">
-              </div>
-
-              <!-- Submit -->
-              <div class="md:col-span-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-1">
-                <button id="leadDetectBtn" type="submit"
-                  class="w-full sm:w-auto rounded-xl px-6 py-3 font-semibold text-black bg-white hover:bg-white/90 transition"
-                  data-original-text="Continuar">
-                  Continuar
-                </button>
-                <p class="text-xs text-white/55">
-                  Sin compromiso · Te decimos rápido si encaja o no
-                </p>
-              </div>
-            </form>
+          <div class="mt-3 flex items-center gap-2 text-sm whitespace-nowrap">
+            <span class="text-white/60">Plazo de entrega</span>
+            <span class="text-white/40">·</span>
+            <span class="font-semibold text-white">~2 semanas</span>
           </div>
         </div>
-      </div>
 
+        <!-- Divider -->
+        <div class="border-t border-white/10 mb-6"></div>
+
+        <!-- Form (crece y empuja el botón hacia abajo si hace falta) -->
+        <form id="leadDetectForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
+
+          <!-- Q1 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              Tamaño de la empresa *
+            </label>
+            <select name="company_size" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="1-5">1–5</option>
+              <option value="6-20">6–20</option>
+              <option value="21-80">21–80</option>
+              <option value="81-300">81–300</option>
+              <option value="300+">+300</option>
+            </select>
+          </div>
+
+          <!-- Q2 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Para qué lo necesitás? *
+            </label>
+            <select name="use_case" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="paid">Paid ads / performance</option>
+              <option value="launch">Lanzamiento / campaña</option>
+              <option value="organic">Redes orgánicas</option>
+              <option value="unclear">Todavía no lo tengo claro</option>
+            </select>
+          </div>
+
+          <!-- Q3 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Cómo producen hoy? *
+            </label>
+            <select name="current_production" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="inhouse">Equipo interno</option>
+              <option value="freelance">Freelancers / proveedores</option>
+              <option value="agency">Agencia</option>
+              <option value="none">No producimos de forma regular</option>
+            </select>
+          </div>
+
+          <!-- Q4 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Para cuándo lo necesitás? *
+            </label>
+            <select name="urgency" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="2-3w">En 2–3 semanas</option>
+              <option value="1-2m">En 1–2 meses</option>
+              <option value="exploring">Solo estoy explorando</option>
+            </select>
+          </div>
+
+          <!-- Q5 -->
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Tenés presupuesto asignado? *
+            </label>
+            <select name="budget" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="5k+">Sí, USD 5.000 o más</option>
+              <option value="<5k">Sí, menor a USD 5.000</option>
+              <option value="no">Todavía no</option>
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <div class="md:col-span-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-3">
+            <button id="leadDetectBtn" type="submit"
+              class="w-full sm:w-auto rounded-xl px-6 py-3 font-semibold text-black bg-white hover:bg-white/90 transition"
+              data-original-text="Continuar">
+              Continuar
+            </button>
+            <p class="text-xs text-white/55">
+              Sin compromiso · Te decimos rápido si encaja o no
+            </p>
+          </div>
+        </form>
+
+      </div>
+    </div>
       <!-- Right: includes -->
       <div class="lg:col-span-7">
-        <div class="rounded-3xl border border-white/10 bg-backgroundCard/40 p-7 md:p-8">
+  <div class="h-full rounded-3xl border border-white/10 bg-backgroundCard/60 p-6 md:p-7">
           <h3 class="text-xl font-semibold">Qué incluye</h3>
           <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-white/75">
             <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
@@ -505,7 +516,6 @@
       </div>
     </div>
   </section>
-WHO IT'S FOR -->
   <section class="relative bg-backgroundCard/40 border-y border-white/5">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
       <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Para quién es</p>

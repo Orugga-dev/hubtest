@@ -233,6 +233,7 @@ async function inject() {
     initMobileMenu();
     setFooterYear();
     initLangSwitcher();
+    initHeaderShrink();
     initVideoCards();
   }
 

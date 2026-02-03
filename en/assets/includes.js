@@ -13,7 +13,9 @@
       const href = norm(a.getAttribute("href"));
       const isActive = href === current;
       a.classList.toggle("text-primary", isActive);
-      a.classList.toggle("font-semibold", isActive);      a.classList.toggle("border-primary", isActive);      a.classList.toggle("opacity-90", !isActive);
+      a.classList.toggle("font-semibold", isActive);
+      a.classList.toggle("border-primary", isActive);
+      a.classList.toggle("opacity-90", !isActive);
     });
   }
 
@@ -43,7 +45,9 @@
     });
 
     // Close on link click
-    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    menu.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", closeMenu)
+    );
 
     // Close on resize to desktop
     window.addEventListener("resize", () => {
@@ -66,12 +70,11 @@
     if (!host) return;
 
     function repoBase() {
-      // GitHub Pages project site: https://<user>.github.io/<repo>/...
       const hn = (location.hostname || "").toLowerCase();
       if (!hn.endsWith("github.io")) return "";
       const parts = location.pathname.split("/").filter(Boolean);
-      // ["AdIA-Orugga","en","index.html"]
-      if (parts.length && parts[0] !== "en" && parts[0] !== "es") return "/" + parts[0];
+      if (parts.length && parts[0] !== "en" && parts[0] !== "es")
+        return "/" + parts[0];
       return "";
     }
 
@@ -79,7 +82,6 @@
       let p = location.pathname;
       const base = repoBase();
       if (base && p.startsWith(base)) p = p.slice(base.length);
-      // remove /en or /es
       p = p.replace(/^\/(en|es)/, "");
       return p === "" ? "/index.html" : p;
     }
@@ -95,14 +97,46 @@
     });
   }
 
-  
+  // ================= HEADER SHRINK =================
+  function initHeaderShrink() {
+    const header = document.getElementById("siteHeaderBar");
+    const inner = document.getElementById("headerInner");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (!header || !inner) return;
+
+    const THRESHOLD = 12;
+
+    function setMobileTop() {
+      if (!mobileMenu) return;
+      const h = header.getBoundingClientRect().height;
+      mobileMenu.style.top = `${Math.round(h)}px`;
+    }
+
+    function onScroll() {
+      const scrolled = window.scrollY > THRESHOLD;
+      header.classList.toggle("is-scrolled", scrolled);
+      setMobileTop();
+    }
+
+    onScroll();
+    setMobileTop();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", setMobileTop);
+    window.addEventListener("pageshow", () => {
+      onScroll();
+      setMobileTop();
+    });
+  }
+
   // ================= VIDEO CARDS (Showcase) =================
   function ensureVideoModal() {
     if (document.getElementById("adiaVideoModal")) return;
 
     const modal = document.createElement("div");
     modal.id = "adiaVideoModal";
-    modal.className = "fixed inset-0 z-[9999] hidden items-center justify-center bg-black/70 p-4";
+    modal.className =
+      "fixed inset-0 z-[9999] hidden items-center justify-center bg-black/70 p-4";
     modal.innerHTML = `
       <div class="relative w-full max-w-5xl">
         <button id="adiaVideoModalClose"
@@ -132,11 +166,16 @@
       if (body) body.innerHTML = "";
     };
 
-    document.getElementById("adiaVideoModalClose")?.addEventListener("click", close);
-    modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
-    window.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    document
+      .getElementById("adiaVideoModalClose")
+      ?.addEventListener("click", close);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) close();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
 
-    // store closer for later
     modal._close = close;
   }
 
@@ -170,9 +209,10 @@
       track.default = true;
       v.appendChild(track);
 
-      // Some browsers need explicit showing
       v.addEventListener("loadedmetadata", () => {
-        try { for (const tt of v.textTracks) tt.mode = "showing"; } catch (_) {}
+        try {
+          for (const tt of v.textTracks) tt.mode = "showing";
+        } catch (_) {}
       });
     }
 
@@ -182,7 +222,6 @@
     modal.classList.add("flex");
     document.body.classList.add("modal-open");
 
-    // Autoplay might be blocked; controls still allow user to play.
     v.play().catch(() => {});
   }
 
@@ -191,27 +230,22 @@
     if (!cards.length) return;
 
     cards.forEach((card) => {
-      // avoid double binding
       if (card.dataset.vbound === "1") return;
       card.dataset.vbound = "1";
 
       card.addEventListener("click", () => {
         const src = card.getAttribute("data-video-src");
         const title = card.getAttribute("data-video-title") || "Video";
-
-        // If your VTT is present, enable it only for the hero reel
-        const subtitlesVtt = (src === "hero-reel.mp4") ? "hero-reel.en.vtt" : "";
-
+        const subtitlesVtt =
+          src === "hero-reel.mp4" ? "hero-reel.en.vtt" : "";
         if (src) openVideoModal({ src, title, subtitlesVtt });
       });
     });
   }
 
-async function inject() {
+  async function inject() {
     const headerHost = document.getElementById("siteHeader");
     const footerHost = document.getElementById("siteFooter");
-
-    // If hosts aren't present, do nothing (page might not use includes)
     if (!headerHost && !footerHost) return;
 
     try {
@@ -224,11 +258,9 @@ async function inject() {
         footerHost.innerHTML = await res.text();
       }
     } catch (e) {
-      // fail silently – page will still render without injected chrome
       return;
     }
 
-    // Init behaviors after injection
     setActiveNav();
     initMobileMenu();
     setFooterYear();

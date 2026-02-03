@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pack Boost — Producción audiovisual en 2 semanas | AdIA</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA3FF',
+            backgroundDark: '#0B141A',
+            backgroundCard: '#121E27',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<!-- Cinematic hero reel (video background) -->
+<style>
+    html, body { overflow-x: hidden; }
+
+    .hero-reel-wrap{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      background-image:url('hero-reel-poster.jpg'); /* fallback */
+      background-size:cover;
+      background-position:center;
+    }
+    .hero-reel-video{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:116%;
+      height:116%;
+      object-fit:cover;
+      object-position:center;
+      transform:translate(-50%, -50%) scale(1.02);
+      filter:blur(14px) contrast(1.18) saturate(1.15) brightness(1.05);
+    }
+    .hero-reel-overlay{
+      position:absolute;
+      inset:0;
+      background:radial-gradient(70% 60% at 50% 45%,
+        rgba(11,20,26,0.08) 0%,
+        rgba(11,20,26,0.50) 55%,
+        rgba(11,20,26,0.78) 100%);
+    }
+    .hero-reel-grain{
+      position:absolute;
+      inset:0;
+      background-image:url('grain.png');
+      opacity:.55;
+      mix-blend-mode:overlay;
+    }
+    @media (max-width: 768px){
+      .hero-reel-video{
+        width:128%;
+        height:128%;
+        filter:blur(10px) contrast(1.15) saturate(1.10) brightness(1.02);
+      }
+      .hero-reel-grain{opacity:.45;}
+    }
+
+    .hero-focus{position:relative;}
+    .hero-focus::before{
+      content:"";
+      position:absolute;
+      inset:-28px;
+      background:radial-gradient(65% 60% at 50% 38%,
+        rgba(11,20,26,.55) 0%,
+        rgba(11,20,26,.28) 45%,
+        rgba(11,20,26,0) 78%);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      border-radius:28px;
+      z-index:-1;
+      pointer-events:none;
+    }
+    .hero-focus h1, .hero-focus p{ text-shadow:0 2px 18px rgba(0,0,0,.25); }
+  </style>
+<!-- Shared includes (injects header/footer) -->
+<script defer="" src="assets/includes.js"></script>
+
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getadia.com/es/landing-pack-boost.html">
+  <meta property="og:title" content="Pack Boost — Producción audiovisual en 2 semanas | AdIA">
+  <meta property="og:description" content="Transformamos briefs en activos audiovisuales listos para publicar en 2 semanas. Dirección humana, ejecución acelerada con IA.">
+  <meta property="og:image" content="https://getadia.com/es/hero-reel-poster.jpg">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pack Boost — Producción audiovisual en 2 semanas | AdIA">
+  <meta name="twitter:description" content="Transformamos briefs en activos audiovisuales listos para publicar en 2 semanas. Dirección humana, ejecución acelerada con IA.">
+  <meta name="twitter:image" content="https://getadia.com/es/hero-reel-poster.jpg">
+
+</head>
+
+<body class="bg-backgroundDark text-white font-sans antialiased">
+  <!-- Header injected -->
+  <div id="siteHeader"></div>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="hero-reel-wrap" aria-hidden="true">
+      <video class="hero-reel-video" autoplay muted playsinline loop preload="auto">
+        <source src="hero-reel.mp4" type="video/mp4">
+      </video>
+      <div class="hero-reel-overlay"></div>
+      <div class="hero-reel-grain"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
+      <div class="max-w-3xl hero-focus">
+        <p class="text-sm tracking-[0.22em] uppercase text-white/65 mb-4">Pack Boost · Fast Track</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+          La producción es el verdadero cuello de botella.
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-white/78 leading-relaxed">
+          Transformamos briefs en <span class="text-white font-semibold">activos audiovisuales listos para publicar</span> en tan solo
+          <span class="text-white font-semibold">2 semanas</span> — dirección creativa humana, ejecución acelerada con IA, estándares de producción real.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="request-demo.html"
+             class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 hover:opacity-95 transition">
+            Reservar una call de 20 minutos
+          </a>
+          <a href="#showcase"
+             class="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 font-semibold text-white/90 border border-white/10 hover:bg-white/15 transition">
+            Ver ejemplos reales
+          </a>
+        </div>
+
+        <p class="mt-4 text-sm text-white/60">
+          Para equipos que producen a escala · Desde USD 5.000 por producción
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE PREVIEW -->
+  <section id="showcase" class="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="flex items-end justify-between gap-6 mb-10">
+      <div>
+        <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Evidencia</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Producción real. Entrega real.</h2>
+        <p class="mt-4 text-white/70 max-w-2xl">
+          No es un demo experimental. Son piezas pensadas para uso real: paid media, lanzamientos, campañas y adaptaciones.
+        </p>
+      </div>
+      <a href="showcase.html" class="hidden md:inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+        Ver showcase completo
+        <span class="material-symbols-outlined text-[18px]">north_east</span>
+      </a>
+    </div>
+
+    <!-- Curated embeds (links to showcase). Keeping lightweight: thumbnails + CTA -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+    <a href="showcase.html" class="group rounded-2xl border border-white/10 bg-backgroundCard/40 p-6 hover:bg-backgroundCard/55 transition block">
+      <div class="flex items-center justify-between gap-4">
+        <h3 class="text-lg font-semibold">Paid media ready</h3>
+        <span class="material-symbols-outlined text-white/45 group-hover:text-white/75 transition">north_east</span>
+      </div>
+      <p class="mt-3 text-white/70 leading-relaxed">Piezas pensadas para performance, formatos y variantes.</p>
+      <p class="mt-6 text-sm text-white/55">Ver ejemplos</p>
+    </a>
+    
+      
+    <a href="showcase.html" class="group rounded-2xl border border-white/10 bg-backgroundCard/40 p-6 hover:bg-backgroundCard/55 transition block">
+      <div class="flex items-center justify-between gap-4">
+        <h3 class="text-lg font-semibold">Brand-safe execution</h3>
+        <span class="material-symbols-outlined text-white/45 group-hover:text-white/75 transition">north_east</span>
+      </div>
+      <p class="mt-3 text-white/70 leading-relaxed">Control humano en dirección creativa y consistencia de marca.</p>
+      <p class="mt-6 text-sm text-white/55">Ver ejemplos</p>
+    </a>
+    
+      
+    <a href="showcase.html" class="group rounded-2xl border border-white/10 bg-backgroundCard/40 p-6 hover:bg-backgroundCard/55 transition block">
+      <div class="flex items-center justify-between gap-4">
+        <h3 class="text-lg font-semibold">Multi-format delivery</h3>
+        <span class="material-symbols-outlined text-white/45 group-hover:text-white/75 transition">north_east</span>
+      </div>
+      <p class="mt-3 text-white/70 leading-relaxed">Adaptaciones listas para publicar en distintos canales y duraciones.</p>
+      <p class="mt-6 text-sm text-white/55">Ver ejemplos</p>
+    </a>
+    
+    </div>
+
+    <div class="mt-10 md:hidden">
+      <a href="showcase.html" class="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+        Ver showcase completo
+        <span class="material-symbols-outlined text-[18px]">north_east</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="relative bg-backgroundCard/40 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">El problema</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+          Las grandes ideas fallan cuando la producción no acompaña.
+        </h2>
+        <p class="mt-5 text-white/75 leading-relaxed">
+          Tu equipo ya tiene ideas. La marca ya tiene estándares. El presupuesto ya está bajo presión.
+          Pero la producción se rompe cuando llega la realidad:
+        </p>
+        <ul class="mt-8 space-y-3 text-white/75">
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Más plataformas</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Más formatos</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Más versiones</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Los mismos equipos, los mismos tiempos, el mismo presupuesto</li>
+        </ul>
+        <p class="mt-8 text-white font-semibold">
+          El desafío no es la creatividad. Es la <span class="text-white">ejecución a escala</span> sin perder calidad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section class="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5">
+        <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Posicionamiento</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+          Esto no es IA experimental.
+        </h2>
+        <p class="mt-5 text-white/75 leading-relaxed">
+          AdIA fue construido como <span class="text-white font-semibold">infraestructura de ejecución</span>, no como un juguete creativo.
+          Diseñado para entregas predecibles, no para “suerte con prompts”.
+        </p>
+        <p class="mt-6 text-white/75 leading-relaxed">
+          La IA no reemplaza la producción. <span class="text-white font-semibold">La vuelve escalable</span>.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+    <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-6">
+      <h3 class="text-lg font-semibold">Control humano</h3>
+      <p class="mt-3 text-white/70 leading-relaxed">Dirección creativa, criterio y responsabilidad de marca permanecen en humanos.</p>
+    </div>
+    
+          
+    <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-6">
+      <h3 class="text-lg font-semibold">Aceleración con IA</h3>
+      <p class="mt-3 text-white/70 leading-relaxed">Quitamos fricción, tiempo y costo, sin dictar resultados.</p>
+    </div>
+    
+          
+    <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-6">
+      <h3 class="text-lg font-semibold">Ejecución production-grade</h3>
+      <p class="mt-3 text-white/70 leading-relaxed">Validación y entrega con estándares reales de producción.</p>
+    </div>
+    
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="relative bg-backgroundCard/40 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+        <div class="max-w-3xl">
+          <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Cómo trabajamos</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+            Del brief a la entrega — sin fricción.
+          </h2>
+          <p class="mt-5 text-white/75 leading-relaxed">
+            Un flujo claro para avanzar rápido sin perder control. Mismos estándares. Cada vez.
+          </p>
+        </div>
+        <a href="how-it-works.html" class="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+          Ver el proceso completo
+          <span class="material-symbols-outlined text-[18px]">north_east</span>
+        </a>
+      </div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+    <li class="rounded-2xl border border-white/10 bg-backgroundCard/30 p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/10 border border-white/10 font-semibold">1</span>
+        <h3 class="text-lg font-semibold">Brief + alcance</h3>
+      </div>
+      <p class="mt-4 text-white/70 leading-relaxed">Inputs claros, restricciones y objetivos de entrega.</p>
+    </li>
+    
+        
+    <li class="rounded-2xl border border-white/10 bg-backgroundCard/30 p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/10 border border-white/10 font-semibold">2</span>
+        <h3 class="text-lg font-semibold">Conceptos asistidos + criterio humano</h3>
+      </div>
+      <p class="mt-4 text-white/70 leading-relaxed">IA como acelerador. La decisión creativa es humana.</p>
+    </li>
+    
+        
+    <li class="rounded-2xl border border-white/10 bg-backgroundCard/30 p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/10 border border-white/10 font-semibold">3</span>
+        <h3 class="text-lg font-semibold">Storyboard + producción estructurada</h3>
+      </div>
+      <p class="mt-4 text-white/70 leading-relaxed">Ejecución con estándares production-grade.</p>
+    </li>
+    
+        
+    <li class="rounded-2xl border border-white/10 bg-backgroundCard/30 p-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/10 border border-white/10 font-semibold">4</span>
+        <h3 class="text-lg font-semibold">Entrega multiplataforma</h3>
+      </div>
+      <p class="mt-4 text-white/70 leading-relaxed">Assets listos para publicar, con consistencia y control.</p>
+    </li>
+    
+      </ol>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5">
+        <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Oferta de entrada</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Pack Boost</h2>
+        <p class="mt-5 text-white/75 leading-relaxed">
+          Para equipos que necesitan velocidad sin resignar control ni calidad.
+        </p>
+
+        <div class="mt-8 rounded-2xl border border-white/10 bg-backgroundCard/60 p-6">
+          <div class="flex items-center justify-between gap-4">
+            <p class="text-white font-semibold">Entrega</p>
+            <p class="text-white/75">~2 semanas</p>
+          </div>
+          <div class="mt-3 flex items-center justify-between gap-4">
+            <p class="text-white font-semibold">Inversión</p>
+            <p class="text-white/75">Desde USD 5.000</p>
+          </div>
+          <div class="mt-6">
+            <a href="request-demo.html"
+               class="inline-flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 hover:opacity-95 transition">
+              Reservar una call de 20 minutos
+            </a>
+            <p class="mt-3 text-xs text-white/55 text-center">Sin compromiso · Te decimos rápido si encaja o no</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-7 md:p-8">
+          <h3 class="text-xl font-semibold">Qué incluye</h3>
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-white/75">
+            
+    <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+      <p class="font-semibold text-white">2 conceptos creativos</p>
+      <p class="mt-2 text-sm text-white/70 leading-relaxed">Opciones iniciales para alinear enfoque y dirección.</p>
+    </div>
+    
+            
+    <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+      <p class="font-semibold text-white">Storyboard estructurado</p>
+      <p class="mt-2 text-sm text-white/70 leading-relaxed">Definición clara para ejecutar rápido y bien.</p>
+    </div>
+    
+            
+    <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+      <p class="font-semibold text-white">1 pieza principal (30s)</p>
+      <p class="mt-2 text-sm text-white/70 leading-relaxed">Lista para usar en campaña o lanzamiento.</p>
+    </div>
+    
+            
+    <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+      <p class="font-semibold text-white">1 adaptación (15s)</p>
+      <p class="mt-2 text-sm text-white/70 leading-relaxed">Versión para test, variante o canal específico.</p>
+    </div>
+    
+            
+    <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+      <p class="font-semibold text-white">1 ronda de feedback</p>
+      <p class="mt-2 text-sm text-white/70 leading-relaxed">Ajustes controlados para mantener velocidad.</p>
+    </div>
+    
+            
+    <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+      <p class="font-semibold text-white">Entrega production-ready</p>
+      <p class="mt-2 text-sm text-white/70 leading-relaxed">Formatos y estándares listos para publicación.</p>
+    </div>
+    
+          </div>
+
+          <h3 class="mt-10 text-xl font-semibold">Ideal para</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Lanzamientos</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Promociones</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Paid media</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Testing rápido</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Campañas con tiempos cortos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="relative bg-backgroundCard/40 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Para quién es</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+        Para equipos con sobrecarga de ejecución.
+      </h2>
+      <p class="mt-5 text-white/75 max-w-3xl leading-relaxed">
+        No para “one-offs” experimentales. Sí para equipos que necesitan producción constante, con control y calidad.
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+    <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-6">
+      <h3 class="text-lg font-semibold">Brand & Marketing</h3>
+      <p class="mt-3 text-white/70 leading-relaxed">Cuando la complejidad explota entre canales, formatos y variantes.</p>
+    </div>
+    
+        
+    <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-6">
+      <h3 class="text-lg font-semibold">Creative & Production</h3>
+      <p class="mt-3 text-white/70 leading-relaxed">Cuando la calidad tiene que sobrevivir al volumen y los deadlines.</p>
+    </div>
+    
+        
+    <div class="rounded-2xl border border-white/10 bg-backgroundCard/40 p-6">
+      <h3 class="text-lg font-semibold">Growth & Performance</h3>
+      <p class="mt-3 text-white/70 leading-relaxed">Cuando la velocidad de producción impacta directamente en resultados.</p>
+    </div>
+    
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-white/10 bg-backgroundCard/30 p-6">
+        <h3 class="text-lg font-semibold">No es para</h3>
+        <ul class="mt-4 space-y-2 text-white/70">
+          <li class="flex gap-3"><span class="material-symbols-outlined text-white/40">close</span>Experimentos sin criterios de marca</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-white/40">close</span>Resultados “prompt-dependent” difíciles de reproducir</li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-white/40">close</span>Contenidos baratos sin estándar de producción</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-8 md:p-12 overflow-hidden">
+      <div class="max-w-3xl">
+        <p class="text-sm tracking-[0.22em] uppercase text-white/55 mb-2">Siguiente paso</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Planifiquemos tu próximo sprint de 2 semanas.</h2>
+        <p class="mt-5 text-white/75 leading-relaxed">
+          En una llamada corta, evaluamos tu necesidad real de producción y definimos si AdIA es el partner correcto.
+          Si no encaja, te lo decimos.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="request-demo.html"
+             class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 hover:opacity-95 transition">
+            Reservar una call de 20 minutos
+          </a>
+          <a href="showcase.html"
+             class="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 font-semibold text-white/90 border border-white/10 hover:bg-white/15 transition">
+            Ver showcase
+          </a>
+        </div>
+        <p class="mt-4 text-xs text-white/55">Sin pitch agresivo · Sin compromiso · Sí / No rápido</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected -->
+  <div id="siteFooter"></div>
+
+  <!-- Helper components (pure HTML via template literals inlined for readability) -->
+  <script>
+    // no-op: all cards are hard-coded serverless
+  </script>
+</body>
+</html>

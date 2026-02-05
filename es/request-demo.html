@@ -98,48 +98,114 @@
 </div>
 <!-- Form Card -->
 <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-<form action="#" class="space-y-6" id="ctaForm" method="post">
-<div class="grid grid-cols-1 md:grid-cols-2 items-start gap-4 md:gap-5">
-<div>
-<label class="block text-sm font-medium mb-1">Nombre completo *</label>
-<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="full_name" required="" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">Email laboral *</label>
-<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="work_email" required="" type="email"/>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">Empresa *</label>
-<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="company" required="" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">Teléfono <span class="opacity-70">(opcional)</span></label>
-<input autocomplete="tel" class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" id="phoneInput" inputmode="tel" name="phone" type="tel"/>
-<div class="mt-2 text-xs text-slate-400" id="phoneHint"></div>
-<input id="phoneE164" name="phone_e164" type="hidden"/>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">Rol / Cargo *</label>
-<input class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="role" required="" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">Volumen creativo mensual estimado</label>
-<select class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="estimated_volume">
-<option>Menos de 10 piezas</option>
-<option>10–50 piezas</option>
-<option>50–100 piezas</option>
-<option>100+ piezas</option>
-</select>
-</div>
-<div class="md:col-span-2">
-<label class="block text-sm font-medium mb-1">¿Qué te gustaría producir con AdIA? *</label>
-<textarea class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" name="what_to_produce" required="" rows="4"></textarea>
-</div>
-</div>
-<button class="w-full inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-base hover:bg-primary/90 transition text-backgroundDark font-bold" id="ctaSubmit" type="submit"><span class="ctaBtnLabel">Hablemos</span><span class="ctaSpinner hidden ml-2 inline-flex items-center"><span class="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></span></span></button>
-<div class="hidden mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200" id="formMessage"></div>
-</form></div>
+  <form action="#" class="space-y-6" id="ctaForm" method="post">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-4 md:gap-5">
 
+      <!-- Email (único requerido) -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium mb-1">Email *</label>
+        <input
+          class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+          name="work_email"
+          type="email"
+          required
+          placeholder="tu@email.com"
+        />
+      </div>
+
+      <!-- Nombre (opcional) -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium mb-1">
+          Nombre <span class="opacity-70">(opcional)</span>
+        </label>
+        <input
+          class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+          name="full_name"
+          type="text"
+          placeholder="Tu nombre"
+        />
+      </div>
+
+      <!-- Bloque B (obligatorio) -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium mb-1">¿Qué estás buscando? *</label>
+        <select
+          class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+          name="interest_type"
+          required
+        >
+          <option value="" disabled selected>Seleccionar…</option>
+          <option value="produccion_escala">Producción de contenido a escala</option>
+          <option value="campania_lanzamiento">Ejecución de campaña / lanzamiento</option>
+          <option value="sistema_continuo">Sistema de contenido continuo</option>
+          <option value="primer_proyecto">Exploración / primer proyecto</option>
+          <option value="solo_hablar">Solo quiero conversar</option>
+        </select>
+      </div>
+
+      <!-- Bloque C (obligatorio) -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Volumen estimado *</label>
+        <select
+          class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+          name="estimated_scope"
+          required
+        >
+          <option value="" disabled selected>Seleccionar…</option>
+          <option value="1-5">1–5 piezas</option>
+          <option value="5-20">5–20 piezas</option>
+          <option value="20+">20+ piezas</option>
+          <option value="no_seguro">No estoy seguro aún</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Plazo *</label>
+        <select
+          class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+          name="timeline"
+          required
+        >
+          <option value="" disabled selected>Seleccionar…</option>
+          <option value="asap">Lo antes posible</option>
+          <option value="30d">En los próximos 30 días</option>
+          <option value="1-3m">En 1–3 meses</option>
+          <option value="sin_fecha">Sin fecha definida</option>
+        </select>
+      </div>
+
+      <!-- Bloque D (opcional) -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium mb-1">
+          Mensaje <span class="opacity-70">(opcional)</span>
+        </label>
+        <textarea
+          class="w-full rounded-lg bg-background-dark border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+          name="message"
+          rows="4"
+          placeholder="Contanos un poco más sobre lo que tenés en mente"
+        ></textarea>
+      </div>
+
+    </div>
+
+    <button
+      class="w-full inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-base hover:bg-primary/90 transition text-backgroundDark font-bold"
+      id="ctaSubmit"
+      type="submit"
+    >
+      <span class="ctaBtnLabel">Enviar</span>
+      <span class="ctaSpinner hidden ml-2 inline-flex items-center">
+        <span class="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></span>
+      </span>
+    </button>
+
+    <div
+      class="hidden mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+      id="formMessage"
+    ></div>
+  </form>
+</div>
 
 </main>
 <!-- ================= FOOTER (COMMON) ================= -->

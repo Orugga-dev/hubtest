@@ -459,35 +459,6 @@ select option {
                 <option value="sin_fecha">Sin fecha definida</option>
               </select>
             </div>
-<!-- Presupuesto (nuevo) -->
-<div class="md:col-span-2">
-  <label class="block text-sm font-medium text-white/85 mb-1">¿Tenés presupuesto asignado? *</label>
-  <div class="flex flex-wrap gap-3">
-    <label class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-white/90">
-      <input type="radio" name="has_budget" value="si" required class="accent-white/80" />
-      Sí
-    </label>
-    <label class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-white/90">
-      <input type="radio" name="has_budget" value="no" required class="accent-white/80" />
-      No
-    </label>
-  </div>
-  <p class="mt-2 text-xs text-white/55">Si es “Sí”, podés indicarnos un monto estimado.</p>
-</div>
-
-<!-- Monto (condicional) -->
-<div class="md:col-span-2 hidden" id="budgetAmountWrap">
-  <label class="block text-sm font-medium text-white/85 mb-1">
-    Monto estimado <span class="opacity-70">(opcional)</span>
-  </label>
-  <input
-    class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 placeholder:text-white/45 focus:outline-none focus:ring-2 focus:ring-white/20"
-    name="budget_amount"
-    type="text"
-    inputmode="decimal"
-    placeholder="Ej: USD 8000 (o ARS 3.500.000)"
-  />
-</div>
 
             <!-- Bloque D (opcional) -->
             <div class="md:col-span-2">

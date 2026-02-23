@@ -1,0 +1,44 @@
+<footer class="border-t border-white/5 py-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+
+    <!-- Left: Brand -->
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">auto_awesome</span>
+      <span class="font-medium text-slate-300">AdIA</span>
+    </div>
+
+    <!-- Center: Legal links -->
+    <div class="flex gap-6">
+      <a href="privacy.html" class="hover:text-slate-300 transition">
+        Política de Privacidad
+      </a>
+      <a href="terms.html" class="hover:text-slate-300 transition">
+        Términos del Servicio
+      </a>
+    </div>
+
+    <!-- Right: Partnership + Credit -->
+    <div class="text-xs text-slate-500 text-center md:text-right leading-relaxed">
+      <div>
+        © 2026 AdIA. Una alianza estratégica entre
+        <a href="https://www.orugga.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="hover:text-slate-300 transition">
+          Orugga
+        </a>
+        &
+        <a href="https://frame.com.ar/eng/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="hover:text-slate-300 transition">
+          Frame
+        </a>.
+      </div>
+      <div class="opacity-80">
+        Desarrollado por el equipo de IA de Orugga.
+      </div>
+    </div>
+
+  </div>
+</footer>

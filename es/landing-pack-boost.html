@@ -5,6 +5,13 @@
 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- Favicons -->
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-96x96.png" sizes="96x96">
+
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
 <title>Pack Boost — Producción audiovisual en 2 semanas | AdIA</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -381,175 +388,140 @@ select option {
         <!-- Divider -->
         <div class="border-t border-white/10 mb-6"></div>
 
-        <!-- Form (CTA unificado: envía directo desde la landing) -->
-        <form action="#" class="space-y-6 flex-grow" id="ctaForm" method="post">
-          <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-4 md:gap-5">
+        <!-- Form (crece y empuja el botón hacia abajo si hace falta) -->
+        <form id="leadDetectForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
 
-            <!-- Email (único requerido) -->
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-white/85 mb-1">Email *</label>
-              <input
-                class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 placeholder:text-white/45 focus:outline-none focus:ring-2 focus:ring-white/20"
-                name="work_email"
-                type="email"
-                required
-                placeholder="tu@email.com"
-                autocomplete="email"
-              />
-            </div>
-
-            <!-- Nombre (opcional) -->
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-white/85 mb-1">
-                Nombre <span class="opacity-70">(opcional)</span>
-              </label>
-              <input
-                class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 placeholder:text-white/45 focus:outline-none focus:ring-2 focus:ring-white/20"
-                name="full_name"
-                type="text"
-                placeholder="Tu nombre"
-                autocomplete="name"
-              />
-            </div>
-
-            <!-- Bloque B (obligatorio) -->
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-white/85 mb-1">¿Qué estás buscando? *</label>
-              <select
-                class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20"
-                name="interest_type"
-                required
-              >
-                <option value="" disabled selected>Seleccionar…</option>
-                <option value="produccion_escala">Producción de contenido a escala</option>
-                <option value="campania_lanzamiento">Ejecución de campaña / lanzamiento</option>
-                <option value="sistema_continuo">Sistema de contenido continuo</option>
-                <option value="primer_proyecto">Exploración / primer proyecto</option>
-                <option value="solo_hablar">Solo quiero conversar</option>
-              </select>
-            </div>
-
-            <!-- Bloque C (obligatorio) -->
-            <div>
-              <label class="block text-sm font-medium text-white/85 mb-1">Volumen estimado *</label>
-              <select
-                class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20"
-                name="estimated_scope"
-                required
-              >
-                <option value="" disabled selected>Seleccionar…</option>
-                <option value="1-5">1–5 piezas</option>
-                <option value="5-20">5–20 piezas</option>
-                <option value="20+">20+ piezas</option>
-                <option value="no_seguro">No estoy seguro aún</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-white/85 mb-1">Plazo *</label>
-              <select
-                class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20"
-                name="timeline"
-                required
-              >
-                <option value="" disabled selected>Seleccionar…</option>
-                <option value="asap">Lo antes posible</option>
-                <option value="30d">En los próximos 30 días</option>
-                <option value="1-3m">En 1–3 meses</option>
-                <option value="sin_fecha">Sin fecha definida</option>
-              </select>
-            </div>
-
-            <!-- Bloque D (opcional) -->
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-white/85 mb-1">
-                Mensaje <span class="opacity-70">(opcional)</span>
-              </label>
-              <textarea
-                class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 placeholder:text-white/45 focus:outline-none focus:ring-2 focus:ring-white/20"
-                name="message"
-                rows="4"
-                placeholder="Contanos un poco más sobre lo que tenés en mente"
-              ></textarea>
-            </div>
-
-            <!-- Honeypot (anti-spam) -->
-            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" />
-
+          <!-- Q1 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              Tamaño de la empresa *
+            </label>
+            <select name="company_size" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="1-5">1–5</option>
+              <option value="6-20">6–20</option>
+              <option value="21-80">21–80</option>
+              <option value="81-300">81–300</option>
+              <option value="300+">+300</option>
+            </select>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2">
-            <button
-              class="w-full sm:w-auto rounded-xl px-6 py-3 font-semibold text-black bg-white hover:bg-white/90 transition inline-flex items-center justify-center"
-              id="ctaSubmit"
-              type="submit"
-            >
-              <span class="ctaBtnLabel">Enviar</span>
-              <span class="ctaSpinner hidden ml-2 inline-flex items-center">
-                <span class="w-4 h-4 rounded-full border-2 border-black/30 border-t-black animate-spin"></span>
-              </span>
+          <!-- Q2 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Para qué lo necesitás? *
+            </label>
+            <select name="use_case" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="paid">Paid ads / performance</option>
+              <option value="launch">Lanzamiento / campaña</option>
+              <option value="organic">Redes orgánicas</option>
+              <option value="unclear">Todavía no lo tengo claro</option>
+            </select>
+          </div>
+
+          <!-- Q3 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Cómo producen hoy? *
+            </label>
+            <select name="current_production" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="inhouse">Equipo interno</option>
+              <option value="freelance">Freelancers / proveedores</option>
+              <option value="agency">Agencia</option>
+              <option value="none">No producimos de forma regular</option>
+            </select>
+          </div>
+
+          <!-- Q4 -->
+          <div>
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Para cuándo lo necesitás? *
+            </label>
+            <select name="urgency" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="2-3w">En 2–3 semanas</option>
+              <option value="1-2m">En 1–2 meses</option>
+              <option value="exploring">Solo estoy explorando</option>
+            </select>
+          </div>
+
+          <!-- Q5 -->
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-white/85 mb-1">
+              ¿Tenés presupuesto asignado? *
+            </label>
+            <select name="budget" required
+              class="w-full rounded-xl bg-black/25 border border-white/10 px-4 py-3 text-white/90 focus:outline-none focus:ring-2 focus:ring-white/20">
+              <option value="" disabled selected>Seleccionar…</option>
+              <option value="5k+">Sí, USD 5.000 o más</option>
+              <option value="<5k">Sí, menor a USD 5.000</option>
+              <option value="no">Todavía no</option>
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <div class="md:col-span-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-3">
+            <button id="leadDetectBtn" type="submit"
+              class="w-full sm:w-auto rounded-xl px-6 py-3 font-semibold text-black bg-white hover:bg-white/90 transition"
+              data-original-text="Continuar">
+              Continuar
             </button>
             <p class="text-xs text-white/55">
-              Sin compromiso · Te respondemos por email
+              Sin compromiso · Te decimos rápido si encaja o no
             </p>
           </div>
-
-          <div class="hidden mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85" id="formMessage"></div>
         </form>
 
       </div>
     </div>
-<!-- Right: includes -->
-<div class="lg:col-span-7">
-  <div class="h-full rounded-3xl border border-white/10 bg-backgroundCard/60 p-6 md:p-7 flex flex-col">
+      <!-- Right: includes -->
+      <div class="lg:col-span-7">
+  <div class="h-full rounded-3xl border border-white/10 bg-backgroundCard/60 p-6 md:p-7">
+          <h3 class="text-xl font-semibold">Qué incluye</h3>
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-white/75">
+            <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+              <p class="font-semibold text-white">2 conceptos creativos</p>
+              <p class="mt-2 text-sm text-white/70 leading-relaxed">Opciones iniciales para alinear enfoque y dirección.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+              <p class="font-semibold text-white">Storyboard estructurado</p>
+              <p class="mt-2 text-sm text-white/70 leading-relaxed">Definición clara para ejecutar rápido y bien.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+              <p class="font-semibold text-white">1 pieza principal (30s)</p>
+              <p class="mt-2 text-sm text-white/70 leading-relaxed">Lista para usar en campaña o lanzamiento.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+              <p class="font-semibold text-white">1 adaptación (15s)</p>
+              <p class="mt-2 text-sm text-white/70 leading-relaxed">Versión para test, variante o canal específico.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+              <p class="font-semibold text-white">1 ronda de feedback</p>
+              <p class="mt-2 text-sm text-white/70 leading-relaxed">Ajustes controlados para mantener velocidad.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
+              <p class="font-semibold text-white">Entrega production-ready</p>
+              <p class="mt-2 text-sm text-white/70 leading-relaxed">Formatos y estándares listos para publicación.</p>
+            </div>
+          </div>
 
-    <!-- TOP -->
-    <div>
-      <h3 class="text-xl font-semibold">Qué incluye</h3>
-
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-white/75">
-        <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
-          <p class="font-semibold text-white">2 conceptos creativos</p>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">Opciones iniciales para alinear enfoque y dirección.</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
-          <p class="font-semibold text-white">Storyboard estructurado</p>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">Definición clara para ejecutar rápido y bien.</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
-          <p class="font-semibold text-white">1 pieza principal (30s)</p>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">Lista para usar en campaña o lanzamiento.</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
-          <p class="font-semibold text-white">1 adaptación (15s)</p>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">Versión para test, variante o canal específico.</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
-          <p class="font-semibold text-white">1 ronda de feedback</p>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">Ajustes controlados para mantener velocidad.</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-backgroundCard/20 p-5">
-          <p class="font-semibold text-white">Entrega production-ready</p>
-          <p class="mt-2 text-sm text-white/70 leading-relaxed">Formatos y estándares listos para publicación.</p>
+          <h3 class="mt-10 text-xl font-semibold">Ideal para</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Lanzamientos</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Promociones</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Paid media</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Testing rápido</span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Campañas con tiempos cortos</span>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- BOTTOM (pega esta sección abajo) -->
-    <div class="mt-auto pt-10 border-t border-white/10">
-      <h3 class="text-xl font-semibold">Ideal para</h3>
-      <div class="mt-4 flex flex-wrap gap-2">
-        <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Lanzamientos</span>
-        <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Promociones</span>
-        <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Paid media</span>
-        <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Testing rápido</span>
-        <span class="inline-flex items-center rounded-full bg-white/10 border border-white/10 px-3 py-1 text-sm text-white/80">Campañas con tiempos cortos</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
   </section>
   <section class="relative bg-backgroundCard/40 border-y border-white/5">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
@@ -626,104 +598,126 @@ select option {
     // no-op: all cards are hard-coded serverless
   </script>
 
-<script>
-(function() {
-  const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzUP7HaKnM4dNC8g5xCwnRrDT22RKW_TlS94-ITQwkSbf-sGXhheD53uCHKWnIryor3/exec';
+  <!-- Lead detection logic (AdIA) -->
+  <script>
+  (function() {
+    const ROUTES = {
+      enterprise: 'request-demo.html?seg=enterprise',
+      pyme:       'request-demo.html?seg=pyme',
+      nq:         'request-demo.html?seg=nq'
+    };
 
-  function showMessage(kind, text) {
-    const el = document.getElementById('formMessage');
-    if (!el) return;
-    el.classList.remove('hidden');
-    el.textContent = text;
-
-    el.classList.remove('border-primary','text-slate-100','border-red-400','text-red-100');
-    if (kind === 'success') {
-      el.classList.add('border-primary','text-slate-100');
-    } else {
-      el.classList.add('border-red-400','text-red-100');
+    function getUTM() {
+      const p = new URLSearchParams(window.location.search);
+      const keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+      const utm = {};
+      keys.forEach(k => { if (p.get(k)) utm[k] = p.get(k); });
+      return utm;
     }
-    el.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('ctaForm');
-    if (!form) return;
+    function appendTracking(url) {
+      const u = new URL(url, window.location.href);
+      const utm = getUTM();
+      Object.entries(utm).forEach(([k,v]) => u.searchParams.set(k, v));
+      if (document.referrer) u.searchParams.set('ref', document.referrer);
+      return u.toString();
+    }
 
-    const btn = document.getElementById('ctaSubmit');
-    const label = btn ? btn.querySelector('.ctaBtnLabel') : null;
-    const spinner = btn ? btn.querySelector('.ctaSpinner') : null;
+    function scoreLead(values) {
+      let score = 0;
 
-    // Fix bfcache/back-button leaving a disabled button
-    window.addEventListener('pageshow', () => {
-      if (spinner) spinner.classList.add('hidden');
-      if (label) label.textContent = 'Enviar';
-      if (btn) {
-        btn.disabled = false;
-        btn.classList.remove('opacity-80');
-      }
+      if (values.company_size === '21-80') score += 2;
+      if (values.company_size === '81-300') score += 3;
+      if (values.company_size === '300+') score += 3;
+
+      if (values.use_case === 'paid' || values.use_case === 'launch') score += 2;
+
+      if (values.current_production === 'inhouse' || values.current_production === 'freelance' || values.current_production === 'agency') score += 1;
+
+      if (values.urgency === '2-3w') score += 2;
+      if (values.urgency === '1-2m') score += 1;
+
+      if (values.budget === '5k+') score += 3;
+      if (values.budget === '<5k') score -= 2;
+      if (values.budget === 'no') score -= 3;
+
+      if (score >= 8) return { segment: 'enterprise', score };
+      if (score >= 5) return { segment: 'pyme', score };
+      return { segment: 'nq', score };
+    }
+
+    function showMsg(kind, text) {
+      const el = document.getElementById('leadDetectMsg');
+      if (!el) return;
+      el.classList.remove('hidden');
+      el.textContent = text;
+      el.style.borderColor = (kind === 'ok') ? 'rgba(255,255,255,0.18)' : 'rgba(248,113,113,0.55)';
+    }
+
+    function resetBtn() {
+      const btn = document.getElementById('leadDetectBtn');
+      if (!btn) return;
+      btn.disabled = false;
+      const orig = btn.getAttribute('data-original-text') || 'Continuar';
+      btn.textContent = orig;
+    }
+
+    // Fix bfcache/back-button leaving "Redirigiendo..."
+    window.addEventListener('pageshow', function(ev) {
+      // pageshow fires also on back/forward cache restores
+      resetBtn();
+      const msg = document.getElementById('leadDetectMsg');
+      if (msg) msg.classList.add('hidden');
     });
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    window.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('leadDetectForm');
+      const btn  = document.getElementById('leadDetectBtn');
+      if (!form || !btn) return;
 
-      // Honeypot
-      const hp = form.querySelector('input[name="website"]');
-      if (hp && hp.value.trim() !== '') {
-        showMessage('success', '¡Gracias! Recibimos tu solicitud.');
-        form.reset();
-        return;
-      }
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-      if (btn) {
-        btn.disabled = true;
-        btn.classList.add('opacity-80');
-      }
-      if (label) label.textContent = 'Enviando…';
-      if (spinner) spinner.classList.remove('hidden');
-
-      try {
         const fd = new FormData(form);
-        const body = new URLSearchParams();
-        for (const [k, v] of fd.entries()) {
-          if (k === 'website') continue;
-          body.append(k, v);
+        const values = {
+          company_size: fd.get('company_size'),
+          use_case: fd.get('use_case'),
+          current_production: fd.get('current_production'),
+          urgency: fd.get('urgency'),
+          budget: fd.get('budget')
+        };
+
+        if (Object.values(values).some(v => !v)) {
+          showMsg('err', 'Por favor completá todas las opciones para continuar.');
+          return;
         }
-       body.append('page', location.pathname.split('/').pop() || 'landing-pack-boost.html');
-body.append('ts', String(Date.now()));
 
-// Tracking (UTM + referrer)
-const p = new URLSearchParams(window.location.search);
-const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-utmKeys.forEach((k) => {
-  const v = p.get(k);
-  if (v) body.append(k, v);
-});
-if (document.referrer) body.append('ref', document.referrer);
+        const { segment, score } = scoreLead(values);
 
+        try {
+          sessionStorage.setItem('adia_lead_segment', segment);
+          sessionStorage.setItem('adia_lead_score', String(score));
+          sessionStorage.setItem('adia_lead_answers', JSON.stringify(values));
+        } catch (_) {}
 
-        await fetch(ENDPOINT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-          body: body.toString()
-        });
+        btn.disabled = true;
+        btn.textContent = 'Redirigiendo...';
 
-        showMessage('success', '¡Enviado! Te responderemos pronto.');
-        form.reset();
-      } catch (err) {
-        showMessage('error', 'Algo salió mal. Por favor, inténtalo de nuevo.');
-      } finally {
-        if (spinner) spinner.classList.add('hidden');
-        if (label) label.textContent = 'Enviar';
-        if (btn) {
-          btn.disabled = false;
-          btn.classList.remove('opacity-80');
-        }
-      }
+        // Safety: if navigation is interrupted, restore after a short delay
+        setTimeout(resetBtn, 2500);
+
+        const target = appendTracking(ROUTES[segment] || ROUTES.nq);
+        const urlObj = new URL(target, window.location.href);
+        urlObj.searchParams.set('score', String(score));
+        urlObj.searchParams.set('size', values.company_size);
+        urlObj.searchParams.set('use', values.use_case);
+        urlObj.searchParams.set('urg', values.urgency);
+
+        window.location.href = urlObj.toString();
+      });
     });
-  });
-})();
-</script>
+  })();
+  </script>
 
 </body>
 </html>

@@ -1,17 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://getadia.com/en/how-it-works.html</loc></url>
-  <url><loc>https://getadia.com/en/index.html</loc></url>
-  <url><loc>https://getadia.com/en/privacy.html</loc></url>
-  <url><loc>https://getadia.com/en/request-demo.html</loc></url>
-  <url><loc>https://getadia.com/en/showcase.html</loc></url>
-  <url><loc>https://getadia.com/en/terms.html</loc></url>
-  <url><loc>https://getadia.com/en/who-we-are.html</loc></url>
-  <url><loc>https://getadia.com/es/how-it-works.html</loc></url>
-  <url><loc>https://getadia.com/es/index.html</loc></url>
-  <url><loc>https://getadia.com/es/privacy.html</loc></url>
-  <url><loc>https://getadia.com/es/request-demo.html</loc></url>
-  <url><loc>https://getadia.com/es/showcase.html</loc></url>
-  <url><loc>https://getadia.com/es/terms.html</loc></url>
-  <url><loc>https://getadia.com/es/who-we-are.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://getadia.com/en/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getadia.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getadia.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getadia.com/en/"/>
+  </url>
+
+  <url>
+    <loc>https://getadia.com/es/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getadia.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getadia.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getadia.com/en/"/>
+  </url>
+
+  <url>
+    <loc>https://getadia.com/en/showcase.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://getadia.com/es/showcase.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://getadia.com/en/how-it-works.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://getadia.com/es/como-funciona.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

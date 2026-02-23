@@ -1,19 +1,51 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,follow" />
+  <title>AdIA</title>
 
-<title>AdIA — Creative Execution Powered by Intelligence</title>
-<meta content="High-end creative production at AI speed. AdIA blends AI-assisted workflows with human production expertise to deliver brand-safe advertising and content—faster, without compromising quality." name="description"/><meta content="index,follow" name="robots"/><link href="https://getadia.com/" rel="canonical"/><link href="https://getadia.com/en/index.html" hreflang="en" rel="alternate"/><link href="https://getadia.com/es/index.html" hreflang="es" rel="alternate"/><link href="https://getadia.com/en/index.html" hreflang="x-default" rel="alternate"/></head>
-<body>
-<main style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; padding: 32px; max-width: 720px; margin: 0 auto;">
-<h1 style="margin: 0 0 8px 0;">AdIA</h1>
-<p style="margin: 0 0 20px 0; color: #444;">Choose your language to continue.</p>
-<ul>
-<li><a href="./en/index.html">English</a></li>
-<li><a href="./es/index.html">Español</a></li>
-</ul>
-</main>
+  <script>
+    (function () {
+      // Collect language preferences (most browsers provide an ordered array)
+      var langs = [];
+      if (Array.isArray(navigator.languages)) langs = navigator.languages;
+      if (!langs.length && navigator.language) langs = [navigator.language];
+
+      // Normalize: ["es-AR","en-US"] -> ["es-ar","en-us"]
+      langs = (langs || []).map(function (l) { return String(l || "").toLowerCase(); });
+
+      // Rule: if ANY preferred language is Spanish => /es/, else /en/
+      var isSpanish = langs.some(function (l) {
+        return l === "es" || l.startsWith("es-");
+      });
+
+      var target = isSpanish ? "es/" : "en/";
+
+      // Preserve querystring/hash (useful if you ever add tracking params)
+      var qs = window.location.search || "";
+      var hash = window.location.hash || "";
+
+      // Avoid redirect loop if already on /es/ or /en/
+      var path = window.location.pathname.toLowerCase();
+      if (path.endsWith("/es/") || path.endsWith("/en/") || path.endsWith("/es/index.html") || path.endsWith("/en/index.html")) {
+        return;
+      }
+
+      window.location.replace(target + qs + hash);
+    })();
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=en/">
+  </noscript>
+</head>
+<body style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px;">
+  <p>Redirecting…</p>
+  <p>
+    If you’re not redirected:
+    <a href="en/">English</a> · <a href="es/">Español</a>
+  </p>
 </body>
 </html>

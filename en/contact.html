@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Hublat | Contact — Start a Conversation</title>
+  <meta name="description" content="Every engagement starts with a candid conversation. Reach out to Hublat for strategic advisory on M&A, growth, and regional execution across Latin America." />
+  <meta property="og:title" content="Hublat | Contact" />
+  <meta property="og:description" content="Every engagement starts with a candid conversation. Reach out to the Hublat team." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orugga-dev.github.io/Hublat_test/en/contact.html" />
+  <link rel="icon" type="image/png" href="../assets/img/logo/hublat-primary.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#17b0cf",
+            "background-light": "#f6f8f8",
+            "background-dark": "#111e21",
+            "card-dark": "#1a2c30",
+            "text-subtle": "#94aeb5",
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/inner-hero.css" />
+  <link rel="stylesheet" href="../assets/css/motion.css?v=20260306_2" />
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111e21; }
+    ::-webkit-scrollbar-thumb { background: #244147; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #17b0cf; }
+    html { scroll-behavior: smooth; }
+    .contact-shell { backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(18, 33, 36, 0.84) 0%, rgba(13, 22, 24, 0.94) 100%); }
+    .contact-field{
+  width:100%;
+  border-radius:0.9rem;
+  border:1px solid rgba(148,174,181,0.25);
+  background:#ffffff;
+  color:#111827;
+  padding:0.95rem 1rem;
+  outline:none;
+  transition:border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+.contact-field::placeholder{
+  color:#9ca3af;
+}
+.contact-field:focus{
+  border-color:#17b0cf;
+  box-shadow:0 0 0 3px rgba(23,176,207,0.15);
+  background:#ffffff;
+}
+    .contact-field.is-invalid { border-color: rgba(248, 113, 113, 0.8); box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.12); }
+    .contact-label { display: block; margin-bottom: 0.55rem; font-size: 0.9rem; font-weight: 700; color: #e2e8f0; }
+    .field-error { display: none; margin-top: 0.55rem; font-size: 0.84rem; line-height: 1.4; color: #fca5a5; }
+    .field-error.is-visible { display: block; }
+    .contact-status { display: none; border-radius: 1rem; border: 1px solid transparent; padding: 0.95rem 1rem; font-size: 0.94rem; line-height: 1.55; }
+    .contact-status.is-visible { display: block; }
+    .contact-status.is-success { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.28); color: #d1fae5; }
+    .contact-status.is-error { background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.24); color: #fecaca; }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .submit-btn[disabled] { opacity: 0.72; cursor: not-allowed; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased overflow-x-hidden transition-colors duration-300">
+  <div data-include="header" data-lang="en"></div>
+  <main class="pt-24">
+    <section class="py-20 bg-white dark:bg-[#0d1618] relative overflow-hidden inner-hero">
+      <div class="absolute inset-0 pointer-events-none hero-media hero-kenburns" style="--hero-url:url('https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2070&auto=format&fit=crop'); --hero-opacity:0.35;" aria-hidden="true"></div>
+      <div class="absolute inset-0 hero-vignette" aria-hidden="true"></div>
+      <div class="absolute inset-0 pointer-events-none hero-grain" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="max-w-3xl mb-10">
+          <div class="mb-4 inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-wider">
+            <span class="block w-6 h-px bg-primary"></span> Get in touch
+          </div>
+          <h1 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Every engagement starts<br class="hidden md:block" /> with a candid conversation.</h1>
+          <p class="text-slate-600 dark:text-text-subtle text-lg max-w-2xl">Share your context, opportunity, or challenge. We review every inquiry personally and connect you with the partner best suited to help.</p>
+        </div>
+        <div class="contact-shell rounded-[1.5rem] border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div class="grid lg:grid-cols-[0.95fr,1.35fr]">
+            <div class="p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/10">
+              <h2 class="mt-6 font-serif text-3xl text-white font-bold leading-tight">One conversation, handled with senior judgment and complete discretion.</h2>
+              <p class="mt-4 text-base leading-7 text-slate-300">Share your context, objective, or opportunity. We review each inquiry internally and route it to the most relevant partner to continue the conversation.</p>
+              <div class="mt-8 space-y-4">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-sm font-semibold text-white">What to include</div>
+                  <p class="mt-2 text-sm leading-6 text-slate-300">Your company, geography, challenge or opportunity — and the type of support you're looking for. No need to have it perfectly figured out.</p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-sm font-semibold text-white">How inquiries are handled</div>
+                  <p class="mt-2 text-sm leading-6 text-slate-300">Each inquiry is reviewed discreetly and routed according to fit, relevance, and availability.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-8 lg:p-10">
+              <form id="contact-form-en" class="space-y-6" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="92ace03d-725a-4d9d-a94c-7e4170cee2cd" />
+              <input type="hidden" name="subject" value="New contact enquiry from Hublat website" />
+              <input type="hidden" name="from_name" value="Hublat website" />
+              <input type="hidden" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" />
+
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website-en">Website</label>
+                  <input id="website-en" name="website_unused" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <input id="started-at-en" name="startedAt" type="hidden" value="" />
+                <div class="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label class="contact-label" for="name-en">Name</label>
+                    <input class="contact-field" id="name-en" name="name" type="text" placeholder="Your full name" autocomplete="name" required aria-describedby="name-error-en" />
+                    <p class="field-error" id="name-error-en"></p>
+                  </div>
+                  <div>
+                    <label class="contact-label" for="company-en">Company</label>
+                    <input class="contact-field" id="company-en" name="company" type="text" placeholder="Company or organization" autocomplete="organization" />
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label class="contact-label" for="email-en">Email</label>
+                    <input class="contact-field" id="email-en" name="email" type="email" placeholder="name@company.com" autocomplete="email" required aria-describedby="email-error-en" />
+                    <p class="field-error" id="email-error-en"></p>
+                  </div>
+                  <div>
+                    <label class="contact-label" for="phone-en">Phone</label>
+                    <input class="contact-field" id="phone-en" name="phone" type="tel" inputmode="tel" placeholder="+1 305 555 0123" autocomplete="tel" aria-describedby="phone-error-en" />
+                    <p class="field-error" id="phone-error-en"></p>
+                  </div>
+                </div>
+                <div>
+                  <label class="contact-label" for="country-en">Country</label>
+                  <select class="contact-field" id="country-en" name="country" autocomplete="country-name">
+                    <option value="">Select a country</option>
+                    <option>Argentina</option>
+                    <option>Uruguay</option>
+                    <option>Chile</option>
+                    <option>Peru</option>
+                    <option>Colombia</option>
+                    <option>Ecuador</option>
+                    <option>Paraguay</option>
+                    <option>Bolivia</option>
+                    <option>Brazil</option>
+                    <option>Mexico</option>
+                    <option>United States</option>
+                    <option>Spain</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="contact-label" for="message-en">Message</label>
+                  <textarea class="contact-field min-h-[180px] resize-y" id="message-en" name="message" placeholder="Briefly describe your context or need." required aria-describedby="message-error-en"></textarea>
+                  <p class="field-error" id="message-error-en"></p>
+                </div>
+                <div class="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div class="text-sm leading-6 text-slate-400">We handle every inquiry with complete discretion.</div>
+                  <button type="submit" class="submit-btn inline-flex items-center justify-center rounded-lg bg-primary hover:bg-primary/90 transition-colors h-12 px-6 text-[#111f22] text-sm font-bold whitespace-nowrap">
+                    <span class="btn-label">Send inquiry</span>
+                  </button>
+                </div>
+                <div id="contact-status-en" class="contact-status" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer" data-lang="en"></div>
+  <script src="../assets/js/includes.js"></script>
+  
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form-en');
+      if (!form) return;
+      var endpoint = form.getAttribute('action') || 'https://api.web3forms.com/submit';
+      var statusBox = document.getElementById('contact-status-en');
+      var startedAt = document.getElementById('started-at-en');
+      var submitButton = form.querySelector('.submit-btn');
+      var submitLabel = form.querySelector('.btn-label');
+      var labels = {
+        sending: 'Sending...',
+        success: 'Your message was sent successfully. We will get back to you shortly.',
+        generic_err: 'We could not send your message right now. Please try again in a few minutes.',
+        spam_err: 'We could not validate your submission. Please refresh the page and try again.',
+        name_req: 'Please enter your name.',
+        email_req: 'Please enter your email.',
+        email_invalid: 'Enter a valid email address.',
+        phone_invalid: 'Enter a valid phone number.',
+        message_req: 'Please enter a message.'
+      };
+      var defaultLabel = submitLabel.textContent;
+      if (startedAt) startedAt.value = String(Date.now());
+
+      function showStatus(type, message) {
+        statusBox.className = 'contact-status is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
+        statusBox.textContent = message;
+      }
+      function clearStatus() {
+        statusBox.className = 'contact-status';
+        statusBox.textContent = '';
+      }
+      function setFieldState(field, message) {
+        var errorEl = document.getElementById(field.name + '-error-en');
+        field.classList.remove('is-invalid');
+        field.removeAttribute('aria-invalid');
+        if (errorEl) { errorEl.classList.remove('is-visible'); errorEl.textContent = ''; }
+        if (message) {
+          field.classList.add('is-invalid');
+          field.setAttribute('aria-invalid', 'true');
+          if (errorEl) { errorEl.textContent = message; errorEl.classList.add('is-visible'); }
+        }
+      }
+      function isValidPhone(value) {
+        if (!value) return true;
+        return /^[0-9+()\-\s]{6,25}$/.test(value);
+      }
+      function validateField(field) {
+        if (!field) return true;
+        var value = (field.value || '').trim();
+        var message = '';
+        if (field.name === 'name' && !value) message = labels.name_req;
+        if (field.name === 'email') {
+          if (!value) message = labels.email_req;
+          else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) message = labels.email_invalid;
+        }
+        if (field.name === 'phone' && !isValidPhone(value)) message = labels.phone_invalid;
+        if (field.name === 'message' && !value) message = labels.message_req;
+        setFieldState(field, message);
+        return !message;
+      }
+      ['name', 'email', 'phone', 'message'].forEach(function (name) {
+        var field = form.elements[name];
+        if (!field) return;
+        field.addEventListener('blur', function () { validateField(field); });
+        field.addEventListener('input', function () {
+          if (field.classList.contains('is-invalid')) validateField(field);
+          clearStatus();
+        });
+      });
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        clearStatus();
+        var botcheck = ((form.elements.botcheck && form.elements.botcheck.value) || '').trim();
+        var websiteUnused = ((form.elements.website_unused && form.elements.website_unused.value) || '').trim();
+        var started = Number((form.elements.startedAt && form.elements.startedAt.value) || '0');
+        if (botcheck || websiteUnused || (started && Date.now() - started < 2500)) {
+          showStatus('error', labels.spam_err);
+          return;
+        }
+        var valid = ['name', 'email', 'phone', 'message'].map(function (name) {
+          return validateField(form.elements[name]);
+        }).every(Boolean);
+        if (!valid) return;
+
+        submitButton.disabled = true;
+        submitLabel.textContent = labels.sending;
+        try {
+          var formData = new FormData(form);
+          formData.set('name', (form.elements.name.value || '').trim());
+          formData.set('company', (form.elements.company.value || '').trim());
+          formData.set('email', (form.elements.email.value || '').trim());
+          formData.set('phone', (form.elements.phone.value || '').trim());
+          formData.set('country', (form.elements.country.value || '').trim());
+          formData.set('message', (form.elements.message.value || '').trim());
+          formData.set('lang', 'en');
+          formData.set('source', 'hublat-contact-form');
+          var response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          });
+          var result = await response.json().catch(function () { return {}; });
+          if (!response.ok || result.success === false) throw new Error((result && result.message) || ('HTTP ' + response.status));
+          form.reset();
+          if (startedAt) startedAt.value = String(Date.now());
+          ['name', 'email', 'phone', 'message'].forEach(function (name) {
+            if (form.elements[name]) setFieldState(form.elements[name], '');
+          });
+          showStatus('success', labels.success);
+          statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (error) {
+          showStatus('error', labels.generic_err);
+        } finally {
+          submitButton.disabled = false;
+          submitLabel.textContent = defaultLabel;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

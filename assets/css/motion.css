@@ -1,0 +1,262 @@
+/* Global motion system (subtle, premium) */
+
+/* 1) Ambient background "life" */
+@keyframes ambientDrift {
+  0% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(-18px, 12px, 0); }
+  100% { transform: translate3d(0,0,0); }
+}
+@keyframes ambientDots {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-80px, 56px, 0); }
+}
+.site-ambient{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.08;
+}
+.dark .site-ambient{ opacity: 0.12; }
+
+.site-ambient .dots{
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(23,176,207,0.45) 1px, rgba(23,176,207,0.0) 2px);
+  background-size: 28px 28px;
+  animation: ambientDots 26s linear infinite;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 18%, rgba(0,0,0,0.0) 74%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 18%, rgba(0,0,0,0.0) 74%);
+}
+.site-ambient .blob1{
+  position:absolute;
+  width: 620px; height: 620px;
+  right: -220px; top: -240px;
+  border-radius: 9999px;
+  background: rgba(23,176,207,0.22);
+  filter: blur(70px);
+  animation: ambientDrift 14s ease-in-out infinite;
+}
+.site-ambient .blob2{
+  position:absolute;
+  width: 720px; height: 720px;
+  left: -260px; bottom: -300px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.10);
+  filter: blur(80px);
+  animation: ambientDrift 18s ease-in-out infinite reverse;
+}
+
+/* Keep content above ambient layer */
+body > * { position: relative; z-index: 1; }
+
+/* 2) Scroll reveal */
+.reveal-ready{ opacity: 0; transform: translateY(10px); }
+.reveal-in{ opacity: 1 !important; transform: translateY(0) !important; }
+.reveal-ready{
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+/* 3) Premium hover */
+.hover-lift{
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+.hover-lift:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.16);
+  border-color: rgba(23,176,207,0.28);
+}
+.dark .hover-lift:hover{
+  box-shadow: 0 18px 60px rgba(0,0,0,0.55);
+  border-color: rgba(23,176,207,0.24);
+}
+
+/* 4) Link underline animation */
+.nav-underline{
+  position: relative;
+}
+.nav-underline::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  bottom:-6px;
+  height:2px;
+  background: rgba(23,176,207,0.65);
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform 220ms ease;
+}
+.nav-underline:hover::after{ transform: scaleX(1); }
+
+/* 5) Button shimmer (very subtle) */
+@keyframes btnShimmer {
+  0% { transform: translateX(-140%); }
+  100% { transform: translateX(160%); }
+}
+.btn-shimmer{ position: relative; overflow: hidden; }
+.btn-shimmer::after{
+  content:"";
+  position:absolute;
+  inset:-50% -70%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-140%);
+  animation: btnShimmer 4.2s ease-in-out infinite;
+}
+
+
+/* 6) Hero image motion (Ken Burns, calm) */
+@keyframes heroKenBurns {
+  0%   { transform: scale(1.08) translate3d(0,0,0); }
+  50%  { transform: scale(1.12) translate3d(-14px, 10px, 0); }
+  100% { transform: scale(1.10) translate3d(10px, -12px, 0); }
+}
+.hero-media{
+  background-image: var(--hero-url);
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  opacity: var(--hero-opacity, 0.45);
+}
+.hero-kenburns{ animation: heroKenBurns 26s ease-in-out infinite; }
+.hero-vignette{
+  background: radial-gradient(1200px 600px at 50% 20%, rgba(17,31,34,0.08), rgba(17,31,34,0.62));
+}
+.hero-grain{
+  opacity: 0.10;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, rgba(255,255,255,0.0) 2px);
+  background-size: 34px 34px;
+  mix-blend-mode: overlay;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .site-ambient .dots,
+  .site-ambient .blob1,
+  .site-ambient .blob2,
+  .btn-shimmer::after,
+  .hero-kenburns{
+    animation: none !important;
+  }
+}
+
+
+/* Header scroll state (subtle, premium) */
+.site-header{
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  will-change: background-color, box-shadow;
+}
+.site-header.is-scrolled{
+  background-color: rgba(17,31,34,0.96) !important;
+  border-bottom-color: rgba(36,65,71,0.85) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Leadership cards: keep LinkedIn buttons aligned regardless of bio length */
+.leader-bio{ min-height: 6.5rem; }
+
+/* ── Stats section animations ─────────────────────────────────────── */
+@keyframes statsSheen {
+  0%   { background-position: 0%   50%; }
+  100% { background-position: 100% 50%; }
+}
+.stats-sheen {
+  background: linear-gradient(90deg, rgba(23,176,207,0.0), rgba(23,176,207,0.22), rgba(23,176,207,0.0));
+  background-size: 200% 100%;
+  animation: statsSheen 6s linear infinite;
+}
+@keyframes statsFloat {
+  0%   { transform: translate3d(0,0,0); }
+  50%  { transform: translate3d(-18px, 10px, 0); }
+  100% { transform: translate3d(0,0,0); }
+}
+@keyframes statsFloat2 {
+  0%   { transform: translate3d(0,0,0); }
+  50%  { transform: translate3d(14px, -12px, 0); }
+  100% { transform: translate3d(0,0,0); }
+}
+.stats-float  { animation: statsFloat  10s ease-in-out infinite; }
+.stats-float2 { animation: statsFloat2 12s ease-in-out infinite; }
+@keyframes statPop {
+  0%   { transform: scale(1); }
+  55%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.stat-pop { animation: statPop 520ms ease-out 1; }
+@keyframes statsDotsMove {
+  0%   { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-60px, 40px, 0); }
+}
+.stats-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgba(23,176,207,0.55) 1px, rgba(23,176,207,0.0) 2px);
+  background-size: 26px 26px;
+  animation: statsDotsMove 18s linear infinite;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.0) 72%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.0) 72%);
+}
+
+/* ── Leadership animations ────────────────────────────────────────── */
+@keyframes leadershipGridMove {
+  0%   { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-40px, 30px, 0); }
+}
+.leadership-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(23,176,207,0.45) 1px, rgba(23,176,207,0.0) 2px);
+  background-size: 28px 28px;
+  animation: leadershipGridMove 22s linear infinite;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.0) 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.0) 75%);
+}
+@keyframes leadershipFloat {
+  0%   { transform: translate3d(0,0,0); }
+  50%  { transform: translate3d(-16px, 12px, 0); }
+  100% { transform: translate3d(0,0,0); }
+}
+.leadership-float { animation: leadershipFloat 12s ease-in-out infinite; }
+.leadership-sheen {
+  background: linear-gradient(110deg, rgba(23,176,207,0.0), rgba(23,176,207,0.22), rgba(23,176,207,0.0));
+  background-size: 200% 100%;
+  animation: statsSheen 6s linear infinite;
+}
+.leader-card.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+/* ── Capabilities / Expertise animations ──────────────────────────── */
+@keyframes capDotsMove {
+  0%   { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-60px, 40px, 0); }
+}
+.cap-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgba(23,176,207,0.50) 1px, rgba(23,176,207,0.0) 2px);
+  background-size: 26px 26px;
+  animation: capDotsMove 20s linear infinite;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.0) 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.0) 75%);
+}
+@keyframes capFloat  { 0%{transform:translate3d(0,0,0)} 50%{transform:translate3d(-18px,12px,0)}  100%{transform:translate3d(0,0,0)} }
+@keyframes capFloat2 { 0%{transform:translate3d(0,0,0)} 50%{transform:translate3d(16px,-14px,0)} 100%{transform:translate3d(0,0,0)} }
+.cap-float  { animation: capFloat  12s ease-in-out infinite; }
+.cap-float2 { animation: capFloat2 14s ease-in-out infinite; }
+.cap-card { transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease, opacity 700ms ease; }
+.cap-card:hover      { box-shadow: 0 18px 60px rgba(0,0,0,0.18); border-color: rgba(23,176,207,0.30); }
+.dark .cap-card:hover{ box-shadow: 0 18px 60px rgba(0,0,0,0.55); border-color: rgba(23,176,207,0.28); }
+.approach-card { transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease, opacity 700ms ease; }
+.approach-card:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,0,0,0.14); border-color: rgba(23,176,207,0.25); }
+.reveal-in { opacity: 1 !important; transform: translateY(0) !important; }
+@keyframes shimmer { 0%{transform:translateX(-120%)} 100%{transform:translateX(160%)} }
+.cta-shimmer::after {
+  content:""; position:absolute; inset:-40% -60%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  transform: translateX(-120%);
+  animation: shimmer 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-sheen, .stats-float, .stats-float2, .stat-pop,
+  .stats-dots, .leadership-grid, .leadership-float,
+  .leadership-sheen, .cap-dots, .cap-float, .cap-float2,
+  .cta-shimmer::after { animation: none !important; }
+}

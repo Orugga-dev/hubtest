@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Hublat | Strategic Growth &amp; Investment Advisory for Latin America</title>
+  <meta name="description" content="Hublat is a strategic advisory firm helping investors and companies navigate Latin America's complex markets. 30+ years of telecom and technology experience across 15+ countries." />
+  <meta property="og:title" content="Hublat | Strategic Advisory for Latin America" />
+  <meta property="og:description" content="Strategic growth and investment advisory for companies and investors across Latin America." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orugga-dev.github.io/Hublat_test/en/" />
+  <link rel="icon" type="image/png" href="../assets/img/logo/hublat-primary.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#17b0cf",
+            "background-light": "#f6f8f8",
+            "background-dark": "#111e21",
+            "card-dark": "#1a2c30",
+            "text-subtle": "#94aeb5",
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <!-- IMPORTANT: hero-media / hero-kenburns live in motion.css. If your header partial doesn't load it, load it here. -->
+  <link rel="stylesheet" href="../assets/css/motion.css?v=20260305_1" />
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111e21; }
+    ::-webkit-scrollbar-thumb { background: #244147; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #17b0cf; }
+    html { scroll-behavior: smooth; }
+
+    /* Stats “alive” effects */
+    
+      100% { background-position: 100% 50%; }
+    }
+    
+    
+      50% { transform: translate3d(-18px, 10px, 0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+    
+      50% { transform: translate3d(14px, -12px, 0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+    
+    
+
+    
+      55% { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+    
+
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased overflow-x-hidden transition-colors duration-300">
+  <div data-include="header" data-lang="en"></div>
+
+  <main class="pt-20">
+    <!-- Hero -->
+    <section id="top" class="relative min-h-[90vh] flex items-center overflow-hidden bg-[#111f22]">
+      <!-- Requires ../assets/css/motion.css -->
+      <div
+        class="absolute inset-0 pointer-events-none hero-media hero-kenburns"
+        style="--hero-url:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); --hero-opacity:0.55;"
+        aria-hidden="true"></div>
+      <div class="absolute inset-0 hero-vignette" aria-hidden="true"></div>
+      <div class="absolute inset-0 pointer-events-none hero-grain" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6 w-full py-20 flex flex-col items-center text-center z-10">
+        <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] max-w-4xl mb-6">
+          Strategic Growth &amp; <br />
+          <span class="text-primary italic">Investment Advisory</span> <br />
+          for Latin America
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl font-light mb-10 leading-relaxed">
+          We help investors and companies navigate complex regional dynamics, translating local knowledge and strategic connections into concrete opportunities.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <a href="contact.html" class="flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-primary/90 text-[#111f22] text-base font-bold transition-all transform hover:-translate-y-0.5">
+            Start a Conversation
+          </a>
+          <a href="case-studies.html" class="flex items-center justify-center h-12 px-8 rounded-lg border border-gray-600 hover:border-white bg-transparent text-white text-base font-medium transition-all hover:bg-white/5">
+            Explore Our Work
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-24 bg-background-light dark:bg-background-dark">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 border-l-4 border-primary pl-6">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            Where We Create Value
+          </h2>
+          <p class="text-slate-600 dark:text-text-subtle text-lg max-w-2xl">
+            Expertise built through 30+ years across telecom and technology, with experience in 15+ countries in Ibero-America.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="group p-8 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-[#244147] hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg dark:shadow-none">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors">Investment &amp; M&amp;A Advisory</h3>
+            <div class="h-0.5 w-12 bg-slate-200 dark:bg-slate-700 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+            <ul class="space-y-3 text-slate-600 dark:text-text-subtle">
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Investment opportunity identification</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Expert support for analysis &amp; decision-making</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Assistance during due diligence</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Post-investment strategic plan definition</li>
+            </ul>
+          </div>
+
+          <div class="group p-8 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-[#244147] hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg dark:shadow-none">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors">Growth &amp; Expansion Strategy</h3>
+            <div class="h-0.5 w-12 bg-slate-200 dark:bg-slate-700 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+            <ul class="space-y-3 text-slate-600 dark:text-text-subtle">
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Expansion strategies aligned with market potential</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Commercial support to strengthen market presence</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Connections with decision makers to unlock opportunities</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Regional execution support across complex contexts</li>
+            </ul>
+          </div>
+
+          <div class="group p-8 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-[#244147] hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg dark:shadow-none">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors">Executive &amp; Board Advisory</h3>
+            <div class="h-0.5 w-12 bg-slate-200 dark:bg-slate-700 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-500"></div>
+            <ul class="space-y-3 text-slate-600 dark:text-text-subtle">
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Board participation to drive execution and growth</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Strategic decision-making under uncertainty</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Crisis management and communication</li>
+              <li class="flex items-start gap-2"><span class="block w-1.5 h-1.5 mt-2 rounded-full bg-primary"></span>Governance and sustainable business ethics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" class="relative overflow-hidden py-24 bg-background-light dark:bg-background-dark border-y border-slate-200 dark:border-[#244147]">
+      <!-- Subtle animated “life” layer -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute inset-0 opacity-[0.07] dark:opacity-[0.10] stats-sheen"></div>
+        <div class="absolute inset-0 opacity-[0.10] dark:opacity-[0.14] stats-dots"></div>
+        <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-primary/12 blur-3xl stats-float"></div>
+        <div class="absolute -bottom-28 -left-24 w-[520px] h-[520px] rounded-full bg-white/7 blur-3xl stats-float2"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="stat-item relative p-8 border-l border-slate-300 dark:border-[#244147] opacity-0 translate-y-3 transition-all duration-700 ease-out">
+            <span class="stat-value block text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-2 tracking-tighter"
+                  data-count="30" data-suffix="+">0</span>
+            <span class="stat-underline block h-[2px] w-10 bg-slate-200 dark:bg-slate-700 origin-left scale-x-0 transition-transform duration-700"></span>
+
+            <span class="mt-4 text-primary text-sm font-bold uppercase tracking-wider mb-2 block">Years</span>
+            <p class="text-slate-600 dark:text-text-subtle font-medium">Regional leadership experience in telecom &amp; technology.</p>
+          </div>
+
+          <div class="stat-item relative p-8 border-l border-slate-300 dark:border-[#244147] opacity-0 translate-y-3 transition-all duration-700 ease-out">
+            <span class="stat-value block text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-2 tracking-tighter"
+                  data-count="15" data-suffix="+">0</span>
+            <span class="stat-underline block h-[2px] w-10 bg-slate-200 dark:bg-slate-700 origin-left scale-x-0 transition-transform duration-700"></span>
+
+            <span class="mt-4 text-primary text-sm font-bold uppercase tracking-wider mb-2 block">Countries</span>
+            <p class="text-slate-600 dark:text-text-subtle font-medium">Experience across Ibero-America markets.</p>
+          </div>
+
+          <div class="stat-item relative p-8 border-l border-slate-300 dark:border-[#244147] opacity-0 translate-y-3 transition-all duration-700 ease-out">
+            <span class="block text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-2 tracking-tighter">Board</span>
+            <span class="stat-underline block h-[2px] w-10 bg-slate-200 dark:bg-slate-700 origin-left scale-x-0 transition-transform duration-700"></span>
+
+            <span class="mt-4 text-primary text-sm font-bold uppercase tracking-wider mb-2 block">Support</span>
+            <p class="text-slate-600 dark:text-text-subtle font-medium">Participation to drive execution and growth.</p>
+          </div>
+
+          <div class="stat-item relative p-8 border-l border-slate-300 dark:border-[#244147] opacity-0 translate-y-3 transition-all duration-700 ease-out">
+            <span class="block text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-2 tracking-tighter">Network</span>
+            <span class="stat-underline block h-[2px] w-10 bg-slate-200 dark:bg-slate-700 origin-left scale-x-0 transition-transform duration-700"></span>
+
+            <span class="mt-4 text-primary text-sm font-bold uppercase tracking-wider mb-2 block">Access</span>
+            <p class="text-slate-600 dark:text-text-subtle font-medium">Strategic connections with regional decision makers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities teaser -->
+    <section id="capabilities-teaser" class="py-24 bg-white dark:bg-[#0d1618] border-b border-slate-200 dark:border-white/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div class="max-w-3xl">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Strategic Advisory Capabilities</h2>
+            <p class="mt-4 text-slate-600 dark:text-text-subtle text-lg">
+              Partner-led advisory to drive disciplined growth, capital strategy, and regional execution across Latin America.
+            </p>
+          </div>
+          <div class="flex gap-3">
+            <a href="expertise.html#capabilities" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:opacity-95 transition">
+              Explore capabilities <span aria-hidden="true">→</span>
+            </a>
+            <a href="contact.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold hover:bg-white/10 transition">
+              Talk to partners <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="expertise.html#capabilities" class="group rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:-translate-y-1 transition">
+            <div class="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="text-slate-900 dark:text-white font-semibold">Growth &amp; Transformation</div>
+            <div class="mt-2 text-slate-600 dark:text-text-subtle text-sm">Performance acceleration in complex markets.</div>
+          </a>
+
+          <a href="expertise.html#capabilities" class="group rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:-translate-y-1 transition">
+            <div class="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8V12L14.5 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="text-slate-900 dark:text-white font-semibold">Capital Strategy</div>
+            <div class="mt-2 text-slate-600 dark:text-text-subtle text-sm">Investment evaluation and value creation planning.</div>
+          </a>
+
+          <a href="expertise.html#capabilities" class="group rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:-translate-y-1 transition">
+            <div class="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 20h10M9 20V8h6v12M6 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="text-slate-900 dark:text-white font-semibold">Board Advisory</div>
+            <div class="mt-2 text-slate-600 dark:text-text-subtle text-sm">Senior guidance for critical decisions.</div>
+          </a>
+
+          <a href="expertise.html#capabilities" class="group rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:-translate-y-1 transition">
+            <div class="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="text-slate-900 dark:text-white font-semibold">Regional Execution</div>
+            <div class="mt-2 text-slate-600 dark:text-text-subtle text-sm">Go-to-market and cross-border scaling support.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership preview -->
+    <section id="leadership" class="relative overflow-hidden py-24 bg-white dark:bg-[#0d1618]">
+      <div class="pointer-events-none absolute inset-0 opacity-[0.08] dark:opacity-[0.12] leadership-grid"></div>
+      <div class="pointer-events-none absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-primary/10 blur-3xl leadership-float"></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Leadership</h2>
+            <p class="text-slate-600 dark:text-text-subtle text-lg">Senior partners with deep regional experience.</p>
+          </div>
+          <a class="hidden md:inline-flex items-center text-primary font-bold hover:underline transition-colors" href="leadership.html">
+            View full leadership<span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-stretch">
+          <!-- Luis -->
+          <div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3">
+            <div class="leader-avatar relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+              <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+              <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              <img src="../assets/img/leadership/luis-malvido.png" alt="Luis Malvido" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Luis Malvido</h3>
+            <p class="text-primary font-medium">Partner</p>
+            <p class="text-xs text-text-subtle mb-2">CEO Advisory · Telco &amp; PayTV</p>
+            <a class="mt-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1"
+               href="https://www.linkedin.com/in/luis-malvido-ceo/" target="_blank" rel="noopener" aria-label="Luis Malvido on LinkedIn">
+              <svg class="w-5 h-5 fill-current block" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Gustavo -->
+          <div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3">
+            <div class="leader-avatar relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+              <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+              <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              <img src="../assets/img/leadership/gustavo-ledesma.png" alt="Gustavo Ledesma" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Gustavo Ledesma</h3>
+            <p class="text-primary font-medium">Partner</p>
+            <p class="text-xs text-text-subtle mb-2">Commercial &amp; Digital Transformation</p>
+            <a class="mt-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1"
+               href="https://www.linkedin.com/in/gustavo-ledesma-advisor-partner-cmo/" target="_blank" rel="noopener" aria-label="Gustavo Ledesma on LinkedIn">
+              <svg class="w-5 h-5 fill-current block" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Juan -->
+          <div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3">
+            <div class="leader-avatar relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+              <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+              <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              <img src="../assets/img/leadership/juan-goulu.png" alt="Juan Goulu" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Juan Goulu</h3>
+            <p class="text-primary font-medium">Partner</p>
+            <p class="text-xs text-text-subtle mb-2">Growth Strategy · Channel &amp; Portfolio</p>
+            <a class="mt-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1"
+               href="https://www.linkedin.com/in/juan-goulu-62723042/" target="_blank" rel="noopener" aria-label="Juan Goulu on LinkedIn">
+              <svg class="w-5 h-5 fill-current block" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Jose -->
+          <div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3">
+            <div class="leader-avatar relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+              <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+              <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              <img src="../assets/img/leadership/jose-ugarte.png" alt="Jose Ugarte" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Jose Ugarte</h3>
+            <p class="text-primary font-medium">Partner</p>
+            <p class="text-xs text-text-subtle mb-2">Business Development · Startups &amp; Tech</p>
+            <a class="mt-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1"
+               href="https://www.linkedin.com/in/jfugarte/" target="_blank" rel="noopener" aria-label="Jose Ugarte on LinkedIn">
+              <svg class="w-5 h-5 fill-current block" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer" data-lang="en"></div>
+
+  <script src="../assets/js/includes.js"></script>
+  <!-- Optional: if your header partial doesn't load motion.js, load it here -->
+  <script defer src="../assets/js/motion.js?v=20260305_1"></script>
+
+  <script>
+    (function () {
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateCount(el, target, suffix) {
+        var start = 0;
+        var duration = 1100; // ms
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = easeOutCubic(progress);
+          var value = Math.round(start + (target - start) * eased);
+          el.textContent = String(value) + (suffix || "");
+          if (progress < 1) { requestAnimationFrame(step); } else {
+            el.classList.remove("stat-pop");
+            void el.offsetWidth;
+            el.classList.add("stat-pop");
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function initStatsAnimations() {
+        var section = document.getElementById("stats");
+        if (!section) return;
+
+        var items = Array.prototype.slice.call(section.querySelectorAll(".stat-item"));
+        var counters = Array.prototype.slice.call(section.querySelectorAll(".stat-value[data-count]"));
+
+        var hasRun = false;
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              items.forEach(function (item, i) {
+                setTimeout(function () {
+                  item.classList.remove("opacity-0", "translate-y-3");
+                  item.classList.add("opacity-100", "translate-y-0");
+                  var ul = item.querySelector(".stat-underline");
+                  if (ul) { ul.classList.remove("scale-x-0"); ul.classList.add("scale-x-100"); }
+                }, i * 90);
+              });
+
+              if (!hasRun) {
+                hasRun = true;
+                counters.forEach(function (el) {
+                  var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+                  var suffix = el.getAttribute("data-suffix") || "";
+                  animateCount(el, target, suffix);
+                });
+              }
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.25 });
+
+        observer.observe(section);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initStatsAnimations);
+      } else {
+        initStatsAnimations();
+      }
+    })();
+  </script>
+
+  <script>
+    (function () {
+      function initLeadershipReveal() {
+        var section = document.getElementById("leadership");
+        if (!section) return;
+
+        var cards = Array.prototype.slice.call(section.querySelectorAll(".leader-card"));
+        if (!cards.length) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              cards.forEach(function (card, i) {
+                setTimeout(function () { card.classList.add("is-visible"); }, i * 90);
+              });
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.2 });
+
+        observer.observe(section);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initLeadershipReveal);
+      } else {
+        initLeadershipReveal();
+      }
+    })();
+  </script>
+</body>
+</html>

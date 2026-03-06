@@ -120,3 +120,113 @@ try {
   document.addEventListener('hublat:includes-ready', function(){ enableHeaderScrollState(); });
   setTimeout(function(){ enableHeaderScrollState(); }, 150);
 } catch(e) {}
+
+/* ═══════════════════════════════════════════════════════════════════
+   V3 ENHANCEMENTS: cursor, scroll-progress, btn arrows
+   ═══════════════════════════════════════════════════════════════════ */
+
+(function () {
+  /* ── Custom cursor ── */
+  function initCursor() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    var cursor = document.createElement('div');
+    cursor.id = 'hublat-cursor';
+    cursor.innerHTML = '<div class="cur-ring"></div><div class="cur-dot"></div>';
+    document.body.appendChild(cursor);
+
+    var ringEl = cursor.querySelector('.cur-ring');
+    var dotEl  = cursor.querySelector('.cur-dot');
+    var mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    var rx = mx, ry = my;
+    var raf;
+
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      dotEl.style.left = mx + 'px';
+      dotEl.style.top  = my + 'px';
+    });
+
+    function animateRing() {
+      rx += (mx - rx) * 0.14;
+      ry += (my - ry) * 0.14;
+      ringEl.style.left = rx + 'px';
+      ringEl.style.top  = ry + 'px';
+      raf = requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.addEventListener('mouseenter', function (e) {
+      var t = e.target;
+      if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a') || t.closest('button'))) {
+        cursor.classList.add('is-hovering');
+      }
+    }, true);
+    document.addEventListener('mouseleave', function (e) {
+      var t = e.target;
+      if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a') || t.closest('button'))) {
+        cursor.classList.remove('is-hovering');
+      }
+    }, true);
+    document.addEventListener('mousedown', function () { cursor.classList.add('is-clicking'); });
+    document.addEventListener('mouseup',   function () { cursor.classList.remove('is-clicking'); });
+  }
+
+  /* ── Scroll progress bar ── */
+  function initScrollProgress() {
+    var bar = document.createElement('div');
+    bar.id = 'scroll-progress';
+    document.body.appendChild(bar);
+    function update() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (docH > 0 ? (scrollTop / docH) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  /* ── Button arrow microinteraction: upgrade existing CTAs ── */
+  function upgradeCTAs() {
+    document.querySelectorAll('a.bg-primary, a[class*="bg-primary"]').forEach(function (btn) {
+      if (btn.classList.contains('btn-arrow')) return;
+      btn.classList.add('btn-fill');
+      // If ends with →, wrap it
+      var html = btn.innerHTML;
+      if (html.includes('→')) {
+        btn.classList.add('btn-arrow');
+        btn.innerHTML = html.replace('→', '<span class="arrow-icon" aria-hidden="true">→</span>');
+      }
+    });
+  }
+
+  /* ── Stat item border-color on scroll ── */
+  function initStatBorders() {
+    var items = document.querySelectorAll('.stat-item');
+    if (!items.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    items.forEach(function (el) { obs.observe(el); });
+  }
+
+  function initV3() {
+    initCursor();
+    initScrollProgress();
+    upgradeCTAs();
+    initStatBorders();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initV3);
+  } else {
+    initV3();
+  }
+
+  // Re-run after partials load
+  document.addEventListener('hublat:includes-ready', function () {
+    upgradeCTAs();
+    initStatBorders();
+  });
+})();

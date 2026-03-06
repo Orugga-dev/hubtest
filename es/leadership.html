@@ -3,402 +3,216 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Hublat | Socios — Liderazgo senior con experiencia regional</title>
-  <meta name="description" content="Conoce a los socios de Hublat: líderes senior con experiencia en telecom, tecnología, crecimiento e inversión en América Latina." />
+  <title>Hublat | Socios — Experiencia regional senior</title>
+  <meta name="description" content="Conoce a los socios de Hublat: cuatro líderes senior con más de 25 años de experiencia en telecomunicaciones, tecnología e inversión en América Latina." />
   <meta property="og:title" content="Hublat | Socios" />
-  <meta property="og:description" content="Socios senior con experiencia profunda en telecom, tecnología, crecimiento e inversión en América Latina." />
+  <meta property="og:description" content="Cuatro socios senior con amplia experiencia en telecomunicaciones, tecnología e inversión en América Latina." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://orugga-dev.github.io/Hublat_test/es/leadership.html" />
   <link rel="icon" type="image/png" href="../assets/img/logo/hublat-primary.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
-          colors: { primary: "#17b0cf", "background-light": "#f6f8f8", "background-dark": "#111e21", "card-dark": "#1a2c30", "text-subtle": "#94aeb5" },
-          fontFamily: { sans: ["Manrope", "sans-serif"], serif: ["Playfair Display", "serif"] },
-          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          colors: {
+            primary: "#17b0cf",
+            "background-light": "#f6f8f8",
+            "background-dark": "#111e21",
+            "card-dark": "#1a2c30",
+            "text-subtle": "#94aeb5",
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
         },
       },
     };
   </script>
+
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/inner-hero.css" />
-  <link rel="stylesheet" href="../assets/css/motion.css?v=20260306_3" />
+  <link rel="stylesheet" href="../assets/css/motion.css?v=20260306_4" />
   <style>
-    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#111e21}::-webkit-scrollbar-thumb{background:#244147;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#17b0cf}html{scroll-behavior:smooth}
-    .leadership-grid {
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(circle at center, rgba(0,0,0,1), rgba(0,0,0,0.15) 78%);
-    }
-    .leadership-card {
-      position: relative;
-      min-height: 560px;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: #0d1618;
-      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 700ms ease, transform 700ms ease, border-color 280ms ease, box-shadow 280ms ease;
-      isolation: isolate;
-    }
-    .leadership-card.is-visible { opacity: 1; transform: translateY(0); }
-    .leadership-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(6,14,16,0.05) 0%, rgba(6,14,16,0.18) 34%, rgba(6,14,16,0.82) 72%, rgba(6,14,16,0.97) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .leadership-card:hover,
-    .leadership-card:focus-within,
-    .leadership-card.is-active {
-      border-color: rgba(23,176,207,0.32);
-      box-shadow: 0 32px 90px rgba(0,0,0,0.5);
-    }
-    .leadership-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 900ms cubic-bezier(0.22,1,0.36,1), filter 500ms ease;
-      filter: saturate(0.95) contrast(1.03);
-    }
-    .leadership-card:hover .leadership-photo,
-    .leadership-card:focus-within .leadership-photo,
-    .leadership-card.is-active .leadership-photo {
-      transform: scale(1.05);
-      filter: saturate(1.03) contrast(1.06);
-    }
-    .leadership-badge {
-      position: absolute;
-      top: 1.25rem;
-      left: 1.25rem;
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(8,18,20,0.74);
-      color: #d8ecef;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      backdrop-filter: blur(12px);
-    }
-    .leadership-index {
-      color: rgba(23,176,207,0.82);
-      font-family: "Playfair Display", serif;
-      font-size: 1.05rem;
-      line-height: 1;
-    }
-    .leadership-panel {
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
-      z-index: 2;
-      padding: 1.5rem;
-      display: grid;
-      gap: 1rem;
-    }
-    .leadership-topline {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .leadership-role {
-      display: inline-flex;
-      max-width: calc(100% - 64px);
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(23,176,207,0.1);
-      color: #8eddef;
-      border: 1px solid rgba(23,176,207,0.18);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .leadership-expand {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(8,18,20,0.62);
-      color: #fff;
-      backdrop-filter: blur(10px);
-      transition: transform 280ms ease, background 280ms ease, border-color 280ms ease;
-      flex: 0 0 auto;
-    }
-    .leadership-card:hover .leadership-expand,
-    .leadership-card:focus-within .leadership-expand,
-    .leadership-card.is-active .leadership-expand {
-      transform: rotate(45deg);
-      background: rgba(23,176,207,0.16);
-      border-color: rgba(23,176,207,0.25);
-    }
-    .leadership-summary {
-      transform: translateY(0);
-      opacity: 1;
-      transition: transform 420ms ease, opacity 420ms ease;
-    }
-    .leadership-details {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 420ms ease;
-    }
-    .leadership-details-inner {
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 320ms ease, transform 320ms ease;
-    }
-    .leadership-card:hover .leadership-summary,
-    .leadership-card:focus-within .leadership-summary,
-    .leadership-card.is-active .leadership-summary {
-      opacity: 0.42;
-      transform: translateY(-6px);
-    }
-    .leadership-card:hover .leadership-details,
-    .leadership-card:focus-within .leadership-details,
-    .leadership-card.is-active .leadership-details {
-      grid-template-rows: 1fr;
-    }
-    .leadership-card:hover .leadership-details-inner,
-    .leadership-card:focus-within .leadership-details-inner,
-    .leadership-card.is-active .leadership-details-inner {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 90ms;
-    }
-    .leadership-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 1rem;
-    }
-    .leadership-tag {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #dce9ec;
-      border-radius: 999px;
-      padding: 0.34rem 0.72rem;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-    }
-    .leadership-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      margin-top: 1.25rem;
-      color: #8eddef;
-      font-size: 0.82rem;
-      font-weight: 700;
-      transition: gap 220ms ease, opacity 220ms ease;
-    }
-    .leadership-link:hover { gap: 0.78rem; opacity: 0.9; }
-    .leadership-link svg { width: 15px; height: 15px; fill: currentColor; }
-    .leadership-principle {
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.25rem;
-      padding: 1.15rem 1.25rem;
-      background: rgba(255,255,255,0.03);
-      backdrop-filter: blur(8px);
-    }
-    @media (max-width: 1024px) {
-      .leadership-card { min-height: 520px; }
-    }
-    @media (max-width: 640px) {
-      .leadership-card { min-height: 480px; }
-      .leadership-panel { padding: 1.15rem; }
-      .leadership-badge { top: 1rem; left: 1rem; }
-      .leadership-role { max-width: calc(100% - 56px); font-size: 0.68rem; }
-    }
-</style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111e21; }
+    ::-webkit-scrollbar-thumb { background: #244147; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #17b0cf; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body class="bg-background-dark text-slate-100 font-sans antialiased overflow-x-hidden">
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased overflow-x-hidden transition-colors duration-300">
   <div data-include="header" data-lang="es"></div>
-  <main class="pt-20">
-    <section class="relative min-h-[48vh] flex items-end overflow-hidden bg-[#060e10] pb-16">
-      <div class="absolute inset-0 pointer-events-none hero-media hero-kenburns" style="--hero-url:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop'); --hero-opacity:0.24;" aria-hidden="true"></div>
-      <div class="absolute inset-0 hero-vignette" aria-hidden="true"></div>
-      <div class="absolute inset-0 pointer-events-none hero-grain" aria-hidden="true"></div>
-      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060e10] to-transparent pointer-events-none" aria-hidden="true"></div>
-      <div class="pointer-events-none absolute inset-0 opacity-[0.08] leadership-grid"></div>
-      <div class="relative max-w-7xl mx-auto px-6 w-full z-10">
-        <div class="section-eyebrow">El Equipo</div>
-        <h1 class="font-serif text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">Socios</h1>
-        <p class="text-text-subtle text-lg max-w-3xl">Socios senior con experiencia real en operación, crecimiento y transformación. Pasa el mouse para ver cada perfil.</p>
-      </div>
-    </section>
 
-    <section class="bg-[#081214] border-y border-white/6">
-      <div class="max-w-7xl mx-auto px-6 py-7 grid gap-4 md:grid-cols-3">
-        <div class="leadership-principle"><div class="text-white font-semibold">Mirada de operador</div><p class="text-text-subtle text-sm mt-2">Ejecutivos que dirigieron negocios reales, no solo proyectos de consultoría.</p></div>
-        <div class="leadership-principle"><div class="text-white font-semibold">Experiencia regional</div><p class="text-text-subtle text-sm mt-2">Trayectoria en América Latina, en mercados competitivos, regulados y en transformación.</p></div>
-        <div class="leadership-principle"><div class="text-white font-semibold">Advisory orientado a ejecución</div><p class="text-text-subtle text-sm mt-2">Un equipo senior enfocado en decisiones, implementación e impacto medible.</p></div>
-      </div>
-    </section>
+  
+<main class="pt-24">
+  <section id="leadership" class="relative overflow-hidden py-20 bg-background-light dark:bg-background-dark inner-hero">
+    <!-- Hero media (subtle motion) -->
+    <div class="absolute inset-0 pointer-events-none hero-media hero-kenburns" style="--hero-url:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2070&auto=format&fit=crop')" aria-hidden="true"></div>
+    <div class="absolute inset-0 hero-vignette" aria-hidden="true"></div>
+    <div class="absolute inset-0 pointer-events-none hero-grain" aria-hidden="true"></div>
 
-    <section class="py-20 bg-[#060e10]">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid gap-6 md:grid-cols-2">
-        <article class="leadership-card" data-partner tabindex="0">
-          <img class="leadership-photo" src="../assets/img/leadership/luis-malvido.png" alt="Luis Malvido" loading="lazy" />
-          <div class="leadership-badge"><span class="leadership-index">01</span> Partner</div>
-          <div class="leadership-panel">
-            <div class="leadership-topline">
-              <span class="leadership-role">Asesoría a CEOs · Telco y PayTV</span>
-              <span class="leadership-expand" aria-hidden="true">
-                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current stroke-[1.8]"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-              </span>
+    <div class="pointer-events-none absolute inset-0 opacity-[0.08] dark:opacity-[0.12] leadership-grid"></div>
+    <div class="pointer-events-none absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-primary/10 blur-3xl leadership-float"></div>
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Socios</h1>
+      <p class="text-slate-600 dark:text-text-subtle text-lg max-w-3xl mb-12">
+        Hublat está liderada por cuatro socios senior con responsabilidades regionales en distintos mercados de Iberoamérica.
+      </p>
+
+
+      <!-- Socios highlights -->
+      <div class="mt-10 mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md p-5">
+          <div class="flex items-start gap-3">
+            <div class="mt-0.5 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8V12L14.5 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
-            <div class="leadership-summary">
-              <h2 class="font-serif text-2xl md:text-[2rem] font-bold text-white leading-tight">Luis Malvido</h2>
-              <p class="text-text-subtle text-sm md:text-[0.95rem] leading-relaxed mt-3 max-w-[34ch]">Más de 20 años como CEO en telecomunicaciones, PayTV y aviación en América Latina y Europa Central.</p>
-            </div>
-            <div class="leadership-details">
-              <div class="leadership-details-inner">
-                <p class="text-slate-100/88 text-sm md:text-[0.95rem] leading-relaxed max-w-[42ch]">Luis ha liderado transformaciones, procesos de crecimiento y reorganizaciones operativas en mercados altamente competitivos, combinando mirada estratégica con ejecución real.</p>
-                <div class="leadership-tags"><span class="leadership-tag">CEO Advisory</span><span class="leadership-tag">Telco</span><span class="leadership-tag">PayTV</span><span class="leadership-tag">Transformación</span><span class="leadership-tag">Crecimiento Regional</span></div>
-                <a class="leadership-link" href="https://www.linkedin.com/in/luis-malvido-ceo/" target="_blank" rel="noopener" aria-label="Luis Malvido en LinkedIn">
-                  <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                  Ver en LinkedIn →
-                </a>
-              </div>
+            <div>
+              <div class="text-3xl font-bold text-slate-900 dark:text-white leading-none">30+<span class="text-primary"> años</span></div>
+              <div class="mt-1 text-slate-600 dark:text-text-subtle">Liderazgo en telecomunicaciones y tecnología</div>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="leadership-card" data-partner tabindex="0">
-          <img class="leadership-photo" src="../assets/img/leadership/gustavo-ledesma.png" alt="Gustavo Ledesma" loading="lazy" />
-          <div class="leadership-badge"><span class="leadership-index">02</span> Partner</div>
-          <div class="leadership-panel">
-            <div class="leadership-topline">
-              <span class="leadership-role">Transformación Comercial y Digital</span>
-              <span class="leadership-expand" aria-hidden="true">
-                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current stroke-[1.8]"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-              </span>
+        <div class="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md p-5">
+          <div class="flex items-start gap-3">
+            <div class="mt-0.5 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 6v12M17 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
             </div>
-            <div class="leadership-summary">
-              <h2 class="font-serif text-2xl md:text-[2rem] font-bold text-white leading-tight">Gustavo Ledesma</h2>
-              <p class="text-text-subtle text-sm md:text-[0.95rem] leading-relaxed mt-3 max-w-[34ch]">Más de 25 años liderando estrategia comercial, pricing, canales y desarrollo de marca en telecom.</p>
-            </div>
-            <div class="leadership-details">
-              <div class="leadership-details-inner">
-                <p class="text-slate-100/88 text-sm md:text-[0.95rem] leading-relaxed max-w-[42ch]">Gustavo se especializa en diseñar motores de crecimiento para operadores de América Latina, con fuerte experiencia en transformación digital y ejecución go-to-market.</p>
-                <div class="leadership-tags"><span class="leadership-tag">Estrategia Comercial</span><span class="leadership-tag">Transformación Digital</span><span class="leadership-tag">Pricing</span><span class="leadership-tag">Canales</span><span class="leadership-tag">Branding</span></div>
-                <a class="leadership-link" href="https://www.linkedin.com/in/gustavo-ledesma-advisor-partner-cmo/" target="_blank" rel="noopener" aria-label="Gustavo Ledesma en LinkedIn">
-                  <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                  Ver en LinkedIn →
-                </a>
-              </div>
+            <div>
+              <div class="text-3xl font-bold text-slate-900 dark:text-white leading-none">15+<span class="text-primary"> países</span></div>
+              <div class="mt-1 text-slate-600 dark:text-text-subtle">Experiencia en América Latina</div>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="leadership-card" data-partner tabindex="0">
-          <img class="leadership-photo" src="../assets/img/leadership/juan-goulu.png" alt="Juan Goulu" loading="lazy" />
-          <div class="leadership-badge"><span class="leadership-index">03</span> Partner</div>
-          <div class="leadership-panel">
-            <div class="leadership-topline">
-              <span class="leadership-role">Estrategia de Crecimiento · Canales y Portfolio</span>
-              <span class="leadership-expand" aria-hidden="true">
-                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current stroke-[1.8]"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-              </span>
+        <div class="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md p-5">
+          <div class="flex items-start gap-3">
+            <div class="mt-0.5 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-            <div class="leadership-summary">
-              <h2 class="font-serif text-2xl md:text-[2rem] font-bold text-white leading-tight">Juan Goulu</h2>
-              <p class="text-text-subtle text-sm md:text-[0.95rem] leading-relaxed mt-3 max-w-[34ch]">Ex CEO con más de 25 años transformando portfolios, canales y modelos operativos.</p>
-            </div>
-            <div class="leadership-details">
-              <div class="leadership-details-inner">
-                <p class="text-slate-100/88 text-sm md:text-[0.95rem] leading-relaxed max-w-[42ch]">Juan aporta experiencia ejecutiva profunda en organizaciones regionales complejas y ayuda a acelerar crecimiento sostenible a partir de decisiones comerciales y operativas más precisas.</p>
-                <div class="leadership-tags"><span class="leadership-tag">Crecimiento</span><span class="leadership-tag">Diseño de Canales</span><span class="leadership-tag">Portfolio</span><span class="leadership-tag">Modelos Operativos</span><span class="leadership-tag">Experiencia CEO</span></div>
-                <a class="leadership-link" href="https://www.linkedin.com/in/juan-goulu-62723042/" target="_blank" rel="noopener" aria-label="Juan Goulu en LinkedIn">
-                  <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                  Ver en LinkedIn →
-                </a>
-              </div>
+            <div>
+              <div class="text-3xl font-bold text-slate-900 dark:text-white leading-none">Ejecución<span class="text-primary"> +</span></div>
+              <div class="mt-1 text-slate-600 dark:text-text-subtle">Crecimiento, resiliencia y valor de largo plazo</div>
             </div>
           </div>
-        </article>
-
-        <article class="leadership-card" data-partner tabindex="0">
-          <img class="leadership-photo" src="../assets/img/leadership/jose-ugarte.png" alt="Jose Ugarte" loading="lazy" />
-          <div class="leadership-badge"><span class="leadership-index">04</span> Partner</div>
-          <div class="leadership-panel">
-            <div class="leadership-topline">
-              <span class="leadership-role">Desarrollo de Negocios · Startups y Tech</span>
-              <span class="leadership-expand" aria-hidden="true">
-                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current stroke-[1.8]"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-              </span>
-            </div>
-            <div class="leadership-summary">
-              <h2 class="font-serif text-2xl md:text-[2rem] font-bold text-white leading-tight">Jose Ugarte</h2>
-              <p class="text-text-subtle text-sm md:text-[0.95rem] leading-relaxed mt-3 max-w-[34ch]">Más de 25 años en tecnología y telecomunicaciones, entre multinacionales y ventures de alto crecimiento.</p>
-            </div>
-            <div class="leadership-details">
-              <div class="leadership-details-inner">
-                <p class="text-slate-100/88 text-sm md:text-[0.95rem] leading-relaxed max-w-[42ch]">Jose se enfoca en escalar negocios, abrir alianzas estratégicas y convertir oportunidades en ejecución concreta en mercados latinoamericanos.</p>
-                <div class="leadership-tags"><span class="leadership-tag">Desarrollo de Negocios</span><span class="leadership-tag">Startups</span><span class="leadership-tag">Tech</span><span class="leadership-tag">Ventures</span><span class="leadership-tag">Operaciones LatAm</span></div>
-                <a class="leadership-link" href="https://www.linkedin.com/in/jfugarte/" target="_blank" rel="noopener" aria-label="Jose Ugarte en LinkedIn">
-                  <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                  Ver en LinkedIn →
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
         </div>
       </div>
-    </section>
-  </main>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-stretch auto-rows-fr">
+        <!-- Cards -->
+        <div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3 transition-transform duration-300 hover:-translate-y-1">
+  <div class="leader-avatar relative w-56 h-56 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+    <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+    <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+    <img src="../assets/img/leadership/luis-malvido.png" alt="Luis Malvido" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+  </div>
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white">Luis Malvido</h3>
+  <p class="text-primary font-medium">Partner</p>
+  <p class="text-xs text-text-subtle mb-3">Advisory de CEO · Telco y PayTV</p>
+  <p class="leader-bio mt-3 text-slate-600 dark:text-text-subtle text-sm leading-relaxed max-w-xs">Con más de 20 años de experiencia como CEO en telco, PayTV y aviación, lideró procesos de transformación y crecimiento en múltiples mercados de Latinoamérica y Europa Central.</p>
+  <a class="mt-auto inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1 leading-none" href="https://www.linkedin.com/in/luis-malvido-ceo/" target="_blank" rel="noopener" aria-label="Luis Malvido en LinkedIn"><svg class="w-5 h-5 fill-current block" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+</div>
+<div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3 transition-transform duration-300 hover:-translate-y-1">
+  <div class="leader-avatar relative w-56 h-56 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+    <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+    <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+    <img src="../assets/img/leadership/gustavo-ledesma.png" alt="Gustavo Ledesma" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+  </div>
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white">Gustavo Ledesma</h3>
+  <p class="text-primary font-medium">Partner</p>
+  <p class="text-xs text-text-subtle mb-3">Transformación comercial y digital</p>
+  <p class="leader-bio mt-3 text-slate-600 dark:text-text-subtle text-sm leading-relaxed max-w-xs">Con más de 25 años en telecomunicaciones, se especializa en estrategia de negocios, planificación operativa, desarrollo de marca, pricing y canales, liderando transformaciones comerciales y digitales en la región.</p>
+  <a class="mt-auto inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1 leading-none" href="https://www.linkedin.com/in/gustavo-ledesma-advisor-partner-cmo/" target="_blank" rel="noopener" aria-label="Gustavo Ledesma en LinkedIn"><svg class="w-5 h-5 fill-current block" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+</div>
+<div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3 transition-transform duration-300 hover:-translate-y-1">
+  <div class="leader-avatar relative w-56 h-56 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+    <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+    <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+    <img src="../assets/img/leadership/juan-goulu.png" alt="Juan Goulu" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+  </div>
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white">Juan Goulu</h3>
+  <p class="text-primary font-medium">Partner</p>
+  <p class="text-xs text-text-subtle mb-3">Estrategia de crecimiento · Canales y portafolio</p>
+  <p class="leader-bio mt-3 text-slate-600 dark:text-text-subtle text-sm leading-relaxed max-w-xs">Con más de 25 años de experiencia en el sector telco, ocupó posiciones de CEO en compañías líderes de América Latina, enfocándose en transformar portafolios, canales y procesos para impulsar el crecimiento.</p>
+  <a class="mt-auto inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1 leading-none" href="https://www.linkedin.com/in/juan-goulu-62723042/" target="_blank" rel="noopener" aria-label="Juan Goulu en LinkedIn"><svg class="w-5 h-5 fill-current block" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+</div>
+<div class="leader-card group h-full flex flex-col items-center text-center opacity-0 translate-y-3 transition-transform duration-300 hover:-translate-y-1">
+  <div class="leader-avatar relative w-56 h-56 rounded-full overflow-hidden mb-6 border-4 border-white/90 dark:border-[#244147] shadow-lg bg-white/5 transition-transform duration-300 group-hover:-translate-y-1">
+    <span class="pointer-events-none absolute inset-0 rounded-full ring-0 ring-primary/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-primary/25"></span>
+    <span class="pointer-events-none absolute inset-0 rounded-full leadership-sheen opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+    <img src="../assets/img/leadership/jose-ugarte.png" alt="Jose Ugarte" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+  </div>
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white">Jose Ugarte</h3>
+  <p class="text-primary font-medium">Partner</p>
+  <p class="text-xs text-text-subtle mb-3">Desarrollo de negocios · Startups y tecnología</p>
+  <p class="leader-bio mt-3 text-slate-600 dark:text-text-subtle text-sm leading-relaxed max-w-xs">
+    Con más de 25 años en tecnología y telecomunicaciones en América Latina, lideró operaciones, estrategias de crecimiento y desarrollo de negocios en empresas multinacionales y startups.
+  </p>
+  <a class="mt-auto inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/20 group-hover:text-white group-hover:-translate-y-1 leading-none" href="https://www.linkedin.com/in/jfugarte/" target="_blank" rel="noopener" aria-label="Jose Ugarte en LinkedIn"><svg class="w-5 h-5 fill-current block" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
   <div data-include="footer" data-lang="es"></div>
   <script src="../assets/js/includes.js"></script>
-  <script defer src="../assets/js/motion.js?v=20260306_3"></script>
-  <script>
-    (function () {
-      var cards = Array.prototype.slice.call(document.querySelectorAll('[data-partner]'));
-      var obs = new IntersectionObserver(function (entries) {
+<script>
+  (function () {
+    function initSociosReveal() {
+      var section = document.getElementById("leadership");
+      if (!section) return;
+
+      var cards = Array.prototype.slice.call(section.querySelectorAll(".leader-card"));
+      if (!cards.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+          if (entry.isIntersecting) {
+            cards.forEach(function (card, i) {
+              setTimeout(function () { card.classList.add("is-visible"); }, i * 90);
+            });
+            observer.disconnect();
+          }
         });
-      }, { threshold: 0.14 });
-      cards.forEach(function (card, index) {
-        card.style.transitionDelay = (index * 80) + 'ms';
-        obs.observe(card);
-        card.addEventListener('mouseenter', function () { cards.forEach(function (c) { if (c !== card) c.classList.remove('is-active'); }); card.classList.add('is-active'); });
-        card.addEventListener('mouseleave', function () { card.classList.remove('is-active'); });
-        card.addEventListener('focusin', function () { cards.forEach(function (c) { if (c !== card) c.classList.remove('is-active'); }); card.classList.add('is-active'); });
-        card.addEventListener('focusout', function (e) { if (!card.contains(e.relatedTarget)) card.classList.remove('is-active'); });
-        card.addEventListener('click', function () {
-          var active = card.classList.contains('is-active');
-          cards.forEach(function (c) { c.classList.remove('is-active'); });
-          if (!active) card.classList.add('is-active');
-        });
-      });
-    })();
-  </script>
+      }, { threshold: 0.2 });
+
+      observer.observe(section);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initSociosReveal);
+    } else {
+      initSociosReveal();
+    }
+  })();
+</script>
+  <script defer src="../assets/js/motion.js?v=20260306_4"></script>
 </body>
 </html>

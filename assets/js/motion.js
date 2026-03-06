@@ -129,46 +129,44 @@ try {
   /* ── Custom cursor ── */
   function initCursor() {
     if (window.matchMedia('(hover: none)').matches) return;
-    var cursor = document.createElement('div');
-    cursor.id = 'hublat-cursor';
-    cursor.innerHTML = '<div class="cur-ring"></div><div class="cur-dot"></div>';
-    document.body.appendChild(cursor);
 
-    var ringEl = cursor.querySelector('.cur-ring');
-    var dotEl  = cursor.querySelector('.cur-dot');
-    var mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    var rx = mx, ry = my;
-    var raf;
+    // Two separate elements — dot is instant, ring has a small lag
+    var dot  = document.createElement('div'); dot.id  = 'cur-dot';
+    var ring = document.createElement('div'); ring.id = 'cur-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
 
+    var mx = -100, my = -100; // start off-screen
+    var rx = -100, ry = -100;
+    var LERP = 0.38; // ring lag — higher = faster follow (0.38 feels snappy but distinct)
+
+    // Dot: set transform instantly on every mousemove (no lag, no jank)
     document.addEventListener('mousemove', function (e) {
       mx = e.clientX; my = e.clientY;
-      dotEl.style.left = mx + 'px';
-      dotEl.style.top  = my + 'px';
-    });
+      dot.style.transform = 'translate3d(' + (mx - 3.5) + 'px,' + (my - 3.5) + 'px,0)';
+    }, { passive: true });
 
-    function animateRing() {
-      rx += (mx - rx) * 0.14;
-      ry += (my - ry) * 0.14;
-      ringEl.style.left = rx + 'px';
-      ringEl.style.top  = ry + 'px';
-      raf = requestAnimationFrame(animateRing);
-    }
-    animateRing();
+    // Ring: animates to dot position with lerp — runs in rAF loop
+    (function loop() {
+      rx += (mx - rx) * LERP;
+      ry += (my - ry) * LERP;
+      ring.style.transform = 'translate3d(' + (rx - 17) + 'px,' + (ry - 17) + 'px,0)';
+      requestAnimationFrame(loop);
+    })();
 
-    document.addEventListener('mouseenter', function (e) {
-      var t = e.target;
-      if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a') || t.closest('button'))) {
-        cursor.classList.add('is-hovering');
+    // Hover / click state on body (avoids costly per-element listeners)
+    document.addEventListener('mouseover', function (e) {
+      if (e.target && (e.target.closest('a') || e.target.closest('button') || e.target.closest('[role="button"]'))) {
+        document.body.classList.add('cur-hover');
       }
-    }, true);
-    document.addEventListener('mouseleave', function (e) {
-      var t = e.target;
-      if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a') || t.closest('button'))) {
-        cursor.classList.remove('is-hovering');
+    }, { passive: true });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target && (e.target.closest('a') || e.target.closest('button') || e.target.closest('[role="button"]'))) {
+        document.body.classList.remove('cur-hover');
       }
-    }, true);
-    document.addEventListener('mousedown', function () { cursor.classList.add('is-clicking'); });
-    document.addEventListener('mouseup',   function () { cursor.classList.remove('is-clicking'); });
+    }, { passive: true });
+    document.addEventListener('mousedown', function () { document.body.classList.add('cur-click'); });
+    document.addEventListener('mouseup',   function () { document.body.classList.remove('cur-click'); });
   }
 
   /* ── Scroll progress bar ── */

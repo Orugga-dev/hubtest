@@ -267,46 +267,56 @@ body > * { position: relative; z-index: 1; }
 
 /* ── 1. Custom cursor ─────────────────────────────────────────────── */
 body { cursor: none; }
-#hublat-cursor {
+
+/* Cursor: two separate fixed elements — dot follows instantly, ring follows with lag.
+   Both use will-change:transform + GPU translate3d — zero reflow, no jank. */
+#cur-dot {
   position: fixed;
   top: 0; left: 0;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #17b0cf;
   pointer-events: none;
   z-index: 99999;
-  mix-blend-mode: normal;
+  will-change: transform;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 200ms ease, height 200ms ease, background 200ms ease, opacity 200ms ease;
 }
-#hublat-cursor .cur-dot {
-  position: absolute;
-  width: 6px; height: 6px;
+#cur-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 34px; height: 34px;
   border-radius: 50%;
-  background: #17b0cf;
-  transform: translate(-50%, -50%);
-  transition: transform 80ms ease, opacity 200ms ease;
+  border: 1.5px solid rgba(23,176,207,0.6);
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 200ms ease, height 200ms ease, border-color 200ms ease, opacity 200ms ease;
 }
-#hublat-cursor .cur-ring {
-  position: absolute;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(23,176,207,0.55);
-  transform: translate(-50%, -50%);
-  transition: width 300ms ease, height 300ms ease, border-color 300ms ease, opacity 300ms ease;
-}
-#hublat-cursor.is-hovering .cur-dot {
-  transform: translate(-50%, -50%) scale(2.2);
+
+/* Hover state */
+body.cur-hover #cur-dot {
+  width: 10px; height: 10px;
   background: #17b0cf;
 }
-#hublat-cursor.is-hovering .cur-ring {
-  width: 52px; height: 52px;
-  border-color: rgba(23,176,207,0.85);
+body.cur-hover #cur-ring {
+  width: 48px; height: 48px;
+  border-color: rgba(23,176,207,0.9);
 }
-#hublat-cursor.is-clicking .cur-dot {
-  transform: translate(-50%, -50%) scale(0.6);
+
+/* Click state */
+body.cur-click #cur-dot {
+  width: 4px; height: 4px;
+  opacity: 0.7;
 }
+
 a, button, [role="button"], input, textarea, select, label {
   cursor: none;
 }
 @media (hover: none) {
   body, a, button { cursor: auto !important; }
-  #hublat-cursor { display: none !important; }
+  #cur-dot, #cur-ring { display: none !important; }
 }
 
 /* ── 2. Scroll progress bar ───────────────────────────────────────── */
@@ -550,7 +560,7 @@ a, button, [role="button"], input, textarea, select, label {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #hublat-cursor, #scroll-progress { display: none !important; }
+  #cur-dot, #cur-ring, #scroll-progress { display: none !important; }
   body { cursor: auto !important; }
   a, button { cursor: auto !important; }
   .btn-arrow .arrow-icon, .btn-fill::before { transition: none !important; }
